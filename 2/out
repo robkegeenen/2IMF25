@@ -1,0 +1,103 @@
+sat
+(model 
+  (define-fun X2 () Int
+    24)
+  (define-fun W3 () Int
+    6)
+  (define-fun Y6 () Int
+    20)
+  (define-fun H8 () Int
+    8)
+  (define-fun Y5 () Int
+    0)
+  (define-fun W6 () Int
+    6)
+  (define-fun H2 () Int
+    4)
+  (define-fun X10 () Int
+    13)
+  (define-fun Y4 () Int
+    1)
+  (define-fun X4 () Int
+    1)
+  (define-fun H10 () Int
+    10)
+  (define-fun X11 () Int
+    6)
+  (define-fun H11 () Int
+    10)
+  (define-fun W11 () Int
+    20)
+  (define-fun X8 () Int
+    23)
+  (define-fun X6 () Int
+    0)
+  (define-fun Y11 () Int
+    20)
+  (define-fun Y2 () Int
+    6)
+  (define-fun W8 () Int
+    7)
+  (define-fun H9 () Int
+    12)
+  (define-fun W0 () Int
+    3)
+  (define-fun H0 () Int
+    4)
+  (define-fun H3 () Int
+    4)
+  (define-fun Y10 () Int
+    10)
+  (define-fun Y8 () Int
+    10)
+  (define-fun W1 () Int
+    4)
+  (define-fun W2 () Int
+    5)
+  (define-fun X1 () Int
+    2)
+  (define-fun X7 () Int
+    0)
+  (define-fun X0 () Int
+    21)
+  (define-fun H6 () Int
+    10)
+  (define-fun H1 () Int
+    3)
+  (define-fun Y1 () Int
+    17)
+  (define-fun W7 () Int
+    6)
+  (define-fun W5 () Int
+    9)
+  (define-fun Y7 () Int
+    6)
+  (define-fun H7 () Int
+    11)
+  (define-fun W9 () Int
+    7)
+  (define-fun Y3 () Int
+    6)
+  (define-fun W4 () Int
+    20)
+  (define-fun X9 () Int
+    6)
+  (define-fun X3 () Int
+    15)
+  (define-fun Y9 () Int
+    6)
+  (define-fun X5 () Int
+    21)
+  (define-fun H5 () Int
+    6)
+  (define-fun H4 () Int
+    5)
+  (define-fun W10 () Int
+    10)
+  (define-fun Y0 () Int
+    6)
+  (define-fun H () Int
+    30)
+  (define-fun W () Int
+    30)
+)
