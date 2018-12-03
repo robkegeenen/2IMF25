@@ -17,12 +17,27 @@
 \usepackage{supertabular}
 \usepackage[toc, page]{appendix}
 \usepackage{listings}
+\usepackage{textcomp}
+\usepackage{gensymb}
 
-\lstset{basicstyle=\ttfamily\tiny, keywordstyle=\bfseries}
+\lstset{
+  basicstyle = \ttfamily\footnotesize,
+  keywordstyle = \bfseries,
+  breaklines = true,
+  postbreak = \mbox{$\hookrightarrow$\space},
+  numbers = left,
+  stepnumber = 1,
+  showstringspaces = false,
+}
+\renewcommand{\ttdefault}{pcr}
 \setlist{parsep = 0pt, listparindent = \parindent}
-\renewcommand{\chaptername}{Question}
+
 \crefname{applbl}{appendix}{appendices}
 \Crefname{applbl}{Appendix}{Appendices}
+\crefname{chplbl}{question}{questions}
+\Crefname{chplbl}{Question}{Questions}
+\renewcommand{\chaptername}{Question}
+\crefalias{chapter}{chplbl}
 
 \title{\bf
   \LARGE [2IMF25] Assignment part 1\\
