@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 import string
 
+imax = 10
 nmin = 1
 nmax = 10
 nexclude = [1, 2, 3, 4, 8, 9, 10]
-irange = range(1, 11)
+
+
+irange = range(1, imax + 1)
 
 #########################
 ### Declare constants ###
