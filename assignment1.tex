@@ -1,10 +1,4 @@
-\documentclass[a4paper, oneside, twocolumn, 10pt, journal, table]{ieeeconf}
-
-\overrideIEEEmargins
-\makeatletter
-\let\NAT@parse\undefined
-\makeatother
-\let\labelindent\relax
+\documentclass[a4paper, oneside, twocolumn, 10pt, table]{report}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -21,8 +15,14 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{supertabular}
+\usepackage[toc, page]{appendix}
+\usepackage{listings}
 
+\lstset{basicstyle=\ttfamily\tiny, keywordstyle=\bfseries}
 \setlist{parsep = 0pt, listparindent = \parindent}
+\renewcommand{\chaptername}{Question}
+\crefname{applbl}{appendix}{appendices}
+\Crefname{applbl}{Appendix}{Appendices}
 
 \title{\bf
   \LARGE [2IMF25] Assignment part 1\\
@@ -40,5 +40,6 @@
 \input{2.tex}
 \input{3.tex}
 \input{4.tex}
+\input{appendices.tex}
 
 \end{document}
