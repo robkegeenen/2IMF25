@@ -1,0 +1,174 @@
+\section{Question 4}
+Assuming the interpretation is blah blah blah (no indentation, nor closing of the for)
+
+c = condition or crash
+
+split table and list t sequences \Cref{tab:4_crashings}
+
+write formulas, 2x implies => ite
+
+\begin{algorithm}
+  \caption{The way the given algorithm has been interpreted}
+  \label{alg:4_improved}
+  \begin{algorithmic}[1]
+    \State $a := 1$;
+    \State $b := 1$;
+    \For{$i := 1 \to 10$}
+      \If{$t$}
+        \State $a := a + 2b$;
+        \State $b := b + i$;
+      \Else
+        \State $b := a + b$;
+        \State $a := a + i$;
+      \EndIf
+      \State $c := (b = 600 + n)$
+      \If{$c$}
+        \State crash
+      \EndIf
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+
+Initial values
+\begin{equation}
+  \label{eqn:4_initial}
+  (a_{0} = 1) \wedge (b_{0} = 1)
+\end{equation}
+
+Loop statements (implies replaced by ite)
+\begin{equation}
+  \label{eqn:4_loop}
+  \begin{aligned}
+    \bigwedge_{i = 1}^{10}
+      \Big(t \implies (a_{i} = a_{i - 1} + 2b_{i - 1}) \wedge (b_{i} = b_{i - 1} + i)\Big) \wedge \\
+      \Big(\neg t \implies (b_{i} = a_{i - 1} + b_{i - 1}) \wedge (a_{i} = a_{i - 1} + i)\Big)
+    \end{aligned}
+\end{equation}
+
+Possible values for n (incl exclusions)
+\begin{equation}
+  \label{eqn:4_valn}
+  (n \geq 1) \wedge (n \leq 10) \wedge
+  \bigwedge_{i \in \{1, 2, 3, 4, 8, 9, 10\}} n \neq i
+\end{equation}
+
+Crash conditions
+\begin{equation}
+  \label{eqn:4_condcrash}
+  \bigwedge_{i = 1}^{10}
+    c_{i} \iff (b_{i} = 600 + n)
+\end{equation}
+
+Specify that program crashes
+\begin{equation}
+  \label{eqn:4_docrash}
+  \bigvee_{i = 1}^{10} c_{i}
+\end{equation}
+
+Set of $n$ that remain: $\{i \in \mathbb{Z} \mid 1 \leq i \leq 10\} \setminus \{1, 2, 3, 4, 8, 9, 10\} = \{5, 6, 7\}$
+
+\newcommand{\IVcrash}{\rowcolor{lightgray}}
+  \begin{center}
+    \bottomcaption{CAPTION}
+    \label{tab:4_crashings}
+    \begin{supertabular}{c c c c c}
+      \hline\hline
+      n = 1 \\
+       i &     t &    a &    b &     c \\\hline
+       0 &       &    1 &    1 &       \\
+       1 &  true &    3 &    2 & false \\
+       2 & false &    5 &    5 & false \\
+       3 &  true &   15 &    8 & false \\
+       4 & false &   19 &   23 & false \\
+       5 &  true &   65 &   28 & false \\
+       6 &  true &  121 &   34 & false \\
+       7 & false &  128 &  155 & false \\
+       8 &  true &  438 &  163 & false \\
+       9 & false &  447 &  601 &  true \\\IVcrash
+      10 & false &  457 & 1048 & false \\
+      \hline\hline
+      n = 2 \\
+       i &     t &    a &    b &     c \\\hline
+       0 &       &    1 &    1 &       \\
+       1 & false &    2 &    2 & false \\
+       2 & false &    4 &    4 & false \\
+       3 &  true &   12 &    7 & false \\
+       4 &  true &   26 &   11 & false \\
+       5 & false &   31 &   37 & false \\
+       6 & false &   37 &   68 & false \\
+       7 & false &   44 &  105 & false \\
+       8 &  true &  254 &  113 & false \\
+       9 &  true &  480 &  122 & false \\
+      10 & false &  490 &  602 &  true \\
+      \hline\hline
+      n = 3 \\
+       i &     t &    a &    b &     c \\\hline
+       0 &       &    1 &    1 &       \\
+       1 &  true &    3 &    2 & false \\
+       2 &  true &    7 &    4 & false \\
+       3 &  true &   15 &    7 & false \\
+       4 & false &   19 &   22 & false \\
+       5 &  true &   63 &   27 & false \\
+       6 & false &   69 &   90 & false \\
+       7 &  true &  249 &   97 & false \\
+       8 & false &  257 &  346 & false \\
+       9 & false &  266 &  603 &  true \\\IVcrash
+      10 & false &  276 &  869 & false \\
+      \hline\hline
+      n = 4 \\
+       i &     t &    a &    b &     c \\\hline
+       0 &       &    1 &    1 &       \\
+       1 & false &    2 &    2 & false \\
+       2 &  true &    6 &    4 & false \\
+       3 &  true &   14 &    7 & false \\
+       4 &  true &   28 &   11 & false \\
+       5 & false &   33 &   39 & false \\
+       6 &  true &  111 &   45 & false \\
+       7 & false &  118 &  156 & false \\
+       8 &  true &  430 &  164 & false \\
+       9 & false &  439 &  594 & false \\
+      10 &  true & 1627 &  604 &  true \\
+      \hline\hline
+      n = 8 \\
+       i &     t &    a &    b &     c \\\hline
+       0 &       &    1 &    1 &       \\
+       1 & false &    2 &    2 & false \\
+       2 &  true &    6 &    4 & false \\
+       3 &  true &   14 &    7 & false \\
+       4 &  true &   28 &   11 & false \\
+       5 &  true &   50 &   16 & false \\
+       6 &  true &   82 &   22 & false \\
+       7 &  true &  126 &   29 & false \\
+       8 & false &  134 &  155 & false \\
+       9 &  true &  444 &  164 & false \\
+      10 & false &  454 &  608 &  true \\
+      \hline\hline
+      n = 9 \\
+       i &     t &    a &    b &     c \\\hline
+       0 &       &    1 &    1 &       \\
+       1 &  true &    3 &    2 & false \\
+       2 &  true &    7 &    4 & false \\
+       3 &  true &   15 &    7 & false \\
+       4 &  true &   29 &   11 & false \\
+       5 & false &   34 &   40 & false \\
+       6 &  true &  114 &   46 & false \\
+       7 & false &  121 &  160 & false \\
+       8 &  true &  441 &  168 & false \\
+       9 & false &  450 &  609 &  true \\\IVcrash
+      10 & false &  460 & 1059 & false \\
+      \hline\hline
+      n = 10 \\
+       i &     t &    a &    b &     c \\\hline
+       0 &       &    1 &    1 &       \\
+       1 & false &    2 &    2 & false \\
+       2 & false &    4 &    4 & false \\
+       3 &  true &   12 &    7 & false \\
+       4 & false &   16 &   19 & false \\
+       5 & false &   21 &   35 & false \\
+       6 & false &   27 &   56 & false \\
+       7 &  true &  139 &   63 & false \\
+       8 &  true &  265 &   71 & false \\
+       9 & false &  274 &  336 & false \\
+      10 & false &  284 &  610 &  true \\
+    \end{supertabular}
+  \end{center}

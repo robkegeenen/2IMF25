@@ -1,0 +1,111 @@
+\section{Question 2}
+
+
+
+
+
+
+
+
+Component $0$ and $1$ are the power components
+Executed for integers, since reals make interpretation harder =>
+  (define-fun X3 () Real
+    (/ 47.0 2.0))
+
+D = 18 finds solution, D = 20 and D = 22 does not, also not in the real domain.
+
+include figure
+
+$cp = 2$, $cr = 10$
+
+
+Width and height of chip and distance between power components
+\begin{equation}
+  \label{eqn:2_wh}
+  W = 30 \wedge H = 30 \wedge D = 18
+\end{equation}
+
+Widths and heights of components, or their 90 degree rotated variants
+\newcommand{\IIsize}[3]{
+  &\Big(
+    (W_{#1} = #2 \wedge H_{#1} = #3) \vee
+    (H_{#1} = #2 \wedge W_{#1} = #3)
+  \Big)
+}
+\begin{equation}
+  \label{eqn:2_sizes}
+  \begin{aligned}
+    \IIsize{0} {4} {3}  \wedge \\
+    \IIsize{1} {4} {3}  \wedge \\
+    \IIsize{2} {4} {5}  \wedge \\
+    \IIsize{3} {4} {6}  \wedge \\
+    \IIsize{4} {5} {20} \wedge \\
+    \IIsize{5} {6} {9}  \wedge \\
+    \IIsize{6} {6} {10} \wedge \\
+    \IIsize{7} {6} {11} \wedge \\
+    \IIsize{8} {7} {8}  \wedge \\
+    \IIsize{9} {7} {12} \wedge \\
+    \IIsize{10}{10}{10} \wedge \\
+    \IIsize{11}{10}{20}
+  \end{aligned}
+\end{equation}
+
+All components should fit on the chip
+\begin{equation}
+  \label{eqn:2_allfit}
+  \bigwedge_{i = 0}^{cp + cr}
+    (X_{i} \geq 0) \wedge
+    (Y_{i} \geq 0) \wedge
+    (X_{i} + W_{i} \leq W) \wedge
+    (Y_{i} + H_{i} \leq H)
+\end{equation}
+
+No overlap
+\begin{equation}
+  \label{eqn:2_overlap}
+  \begin{aligned}
+    \bigwedge_{i = 0}^{cp + cr}
+      \bigwedge_{j = 0, i \neq j}^{cp + cr}
+        &(X_{i} \geq X_{j} + W_{j}) \vee
+         (Y_{i} \geq Y_{j} + H_{j}) \vee \\
+        &(X_{j} \geq X_{i} + W_{i}) \vee
+         (Y_{j} \geq Y_{i} + H_{i})
+  \end{aligned}
+\end{equation}
+
+Connected to power component
+\begin{equation}
+  \label{eqn:2_power}
+  \begin{aligned}
+    \bigwedge_{i = cp}^{cp + cr}
+      \bigvee_{j = 0}^{cp - 1}
+        \Bigg(
+          \Big(&
+            (X_{i} = X_{j} + W_{j}) \vee
+            (X_{j} = X_{i} + W_{i})
+          \Big) \wedge \\&
+          (Y_{i} \leq Y_{j} + H_{j}) \wedge
+          (Y_{j} \leq Y_{i} + H_{i})
+        \Bigg) \vee \\
+        \Bigg(
+          \Big(&
+            (Y_{i} = Y_{j} + H_{j}) \vee
+            (Y_{j} = Y_{i} + H_{i})
+          \Big) \wedge \\&
+          (X_{i} \leq X_{j} + W_{j}) \wedge
+          (X_{j} \leq X_{i} + W_{i})
+        \Bigg)
+    \end{aligned}
+\end{equation}
+
+Heat limit distance
+\begin{equation}
+  \label{eqn:2_dist}
+  \begin{aligned}
+    \bigvee_{i = 0}^{cp - 1}
+      \bigvee_{j = 0, i \neq j}^{cp - 1}
+        &\Big((X_{i} + \frac{1}{2}W_{i}) - (X_{j} + \frac{1}{2}W_{j}) \geq D\Big) \vee \\
+        &\Big((Y_{i} + \frac{1}{2}H_{i}) - (Y_{j} + \frac{1}{2}H_{j}) \geq D\Big)
+  \end{aligned}
+\end{equation}
+
