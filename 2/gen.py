@@ -4,6 +4,7 @@ import string
 domain = "Int"
 W = 30
 H = 30
+D = 18
 comp = [
   {"w": 4 , "h": 3 , "p": True },
   {"w": 4 , "h": 3 , "p": True },
@@ -18,13 +19,13 @@ comp = [
   {"w": 10, "h": 10, "p": False},
   {"w": 10, "h": 20, "p": False},
 ]
-pd = 18
 
 #########################
 ### Declare constants ###
 #########################
 print("(declare-const W %s)" % domain)
 print("(declare-const H %s)" % domain)
+print("(declare-const D %s)" % domain)
 
 for i, c in enumerate(comp):
   print("(declare-const X%d %s)" % (i, domain))
@@ -38,10 +39,10 @@ for i, c in enumerate(comp):
 print("(assert")
 print("(and")
 
-#############################
-### Chip width and height ###
-#############################
-print("(and (= W %d) (= H %d))" % (W, H))
+###################################################################
+### Chip width and height and distance between power components ###
+###################################################################
+print("(and (= W %d) (= H %d) (= D %d))" % (W, H, D))
 
 for i, ci in enumerate(comp):
   ######################################################
@@ -96,8 +97,8 @@ for i, ci in enumerate(comp):
   if ci["p"]:
     for j, cj in enumerate(comp):
       if cj["p"] and i != j:
-        print("(>= (- (+ X%d (/ W%d 2)) (+ X%d (/ W%d 2))) %d)" % (i, i, j, j, pd))
-        print("(>= (- (+ Y%d (/ H%d 2)) (+ Y%d (/ H%d 2))) %d)" % (i, i, j, j, pd))
+        print("(>= (- (+ X%d (/ W%d 2)) (+ X%d (/ W%d 2))) D)" % (i, i, j, j))
+        print("(>= (- (+ Y%d (/ H%d 2)) (+ Y%d (/ H%d 2))) D)" % (i, i, j, j))
 print(")")
 
 ########################

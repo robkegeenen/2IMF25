@@ -96,6 +96,8 @@ sat
     10)
   (define-fun Y0 () Int
     6)
+  (define-fun D () Int
+    18)
   (define-fun H () Int
     30)
   (define-fun W () Int

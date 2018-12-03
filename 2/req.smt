@@ -1,5 +1,6 @@
 (declare-const W Int)
 (declare-const H Int)
+(declare-const D Int)
 (declare-const X0 Int)
 (declare-const Y0 Int)
 (declare-const W0 Int)
@@ -50,7 +51,7 @@
 (declare-const H11 Int)
 (assert
 (and
-(and (= W 30) (= H 30))
+(and (= W 30) (= H 30) (= D 18))
 (or (and (= W0 4) (= H0 3)) (and (= H0 4) (= W0 3)))
 (and (>= X0 0) (>= Y0 0) (<= (+ X0 W0) W) (<= (+ Y0 H0) H))
 (or (>= X0 (+ X1 W1)) (>= Y0 (+ Y1 H1)) (>= X1 (+ X0 W0)) (>= Y1 (+ Y0 H0)))
@@ -268,10 +269,10 @@
 (and (or (= Y11 (+ Y1 H1)) (= Y1 (+ Y11 H11))) (<= X11 (+ X1 W1)) (<= X1 (+ X11 W11)))
 )
 (or
-(>= (- (+ X0 (/ W0 2)) (+ X1 (/ W1 2))) 18)
-(>= (- (+ Y0 (/ H0 2)) (+ Y1 (/ H1 2))) 18)
-(>= (- (+ X1 (/ W1 2)) (+ X0 (/ W0 2))) 18)
-(>= (- (+ Y1 (/ H1 2)) (+ Y0 (/ H0 2))) 18)
+(>= (- (+ X0 (/ W0 2)) (+ X1 (/ W1 2))) D)
+(>= (- (+ Y0 (/ H0 2)) (+ Y1 (/ H1 2))) D)
+(>= (- (+ X1 (/ W1 2)) (+ X0 (/ W0 2))) D)
+(>= (- (+ Y1 (/ H1 2)) (+ Y0 (/ H0 2))) D)
 )
 ))
 (check-sat)
