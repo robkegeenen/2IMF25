@@ -3,10 +3,12 @@ import sys, re
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
+fname = sys.argv[1]
+
 values = {}
 cur = ()
 
-with open(sys.argv[1], "r") as file:
+with open(fname, "r") as file:
   for line in file:
     m = re.search('^\s*\(define-fun\s*([set])([0-9]*).*$', line)
     if m:
@@ -21,7 +23,7 @@ with open(sys.argv[1], "r") as file:
 
 t = values.pop('')["t"]
 
-xscale = 0.08
+xscale = 0.07
 yscale = 0.25
 fig = plt.figure(figsize = (t * xscale, len(values) * yscale))
 ax = plt.axes()
@@ -38,4 +40,5 @@ for r in values:
   cx = rx + rect.get_width()  / 2.0
   cy = ry + rect.get_height() / 2.0
   ax.annotate(r, (cx, cy), color = "k", ha = "center", va = "center")
-plt.show()
+fig.tight_layout()
+fig.savefig(fname + ".pdf", format = "pdf")
