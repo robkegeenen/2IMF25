@@ -21,7 +21,7 @@ with open(sys.argv[1], "r") as file:
 
 t = values.pop('')["t"]
 
-xscale = 0.10
+xscale = 0.08
 yscale = 0.25
 fig = plt.figure(figsize = (t * xscale, len(values) * yscale))
 ax = plt.axes()
