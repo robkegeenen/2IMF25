@@ -64,6 +64,8 @@
 (= t (ite (>= t e8) t e8))
 (= t (ite (>= t e9) t e9))
 (= t (ite (>= t e10) t e10))
+; The following constraints belong to part (b) of the assignment
+(>= s7 s8)
 ))
 (minimize t)
 (check-sat)
