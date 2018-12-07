@@ -28,6 +28,12 @@ print("(declare-const t %s)" % domain)
 print("(assert")
 print("(and")
 
+############################
+### Positive start times ###
+############################
+for i in irange:
+  print("(>= s%d 0)" % i)
+
 #################
 ### End times ###
 #################
@@ -45,7 +51,8 @@ for i in irange:
 ###########################
 ### Total schedule time ###
 ###########################
-print(("(= t (max" + " e%d" * n + "))") % tuple(irange))
+for i in irange:
+  print("(= t (ite (>= t e%d) t e%d))" % (i, i))
       
 ##########################
 ### Close requirements ###
