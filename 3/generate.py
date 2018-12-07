@@ -77,7 +77,7 @@ print("; The following constraints belong to part (c) of the assignment")
 for i in irange:
   if i in R:
     for j in R[i]:
-      print("(or (<= s%d s%d) (>= s%d e%d))" % ((i, j,) * 2))
+      print("(or (<= e%d s%d) (>= s%d e%d))" % ((i, j,) * 2))
       
 ##########################
 ### Close requirements ###
