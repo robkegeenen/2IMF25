@@ -2,7 +2,7 @@
 We introduce a set $P_i$ for each job $i$, with $1 \leq i \leq 10$, which contains the jobs that have to be finished before $i$ can start. We let $s_i$ denote the time at which job $i$ started its execution. The time at which job $i$ finishes can then be found as $s_i + i + 10$. To order the jobs, we need the starting time of some job $i$ to be later than the finishing times of all jobs in $P_i$. We get the constraint specified in Equation~\ref{order}.
 \begin{equation}
     \label{order}
-    \bigwedge^{10}_{i=1}\big(\forall_{j\in P_i} s_i \geq (s_j + j + 10)\big)
+    \bigwedge^{10}_{i=1}\big(\bigwedge_{j\in P_i} s_i \geq (s_j + j + 10)\big)
 \end{equation}
 
 Under these constraints, we want to minimize the total time it takes to execute all jobs. The total time is equal to the finishing time of the last finished job, and we get the following minimization objective:
