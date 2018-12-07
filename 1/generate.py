@@ -18,9 +18,11 @@ pallets = [
 #########################
 ### Declare constants ###
 #########################
-for i in range(1, (T+1)):
-  for j, p in enumerate(pallets):
+for j, p in enumerate(pallets):
+  for i in range(1, (T+1)):
     print("(declare-const %s%d %s)" % (p["name"], i, domain))
+  if p["d"] < 0:
+    print("(declare-const %s %s)" % (p["name"], domain))
 
 ##########################
 ### Begin requirements ###
@@ -49,9 +51,11 @@ fmt = string.join(["(= %d (+"] + [" %s%%d" % x["name"] if x["d"] >= 0 else "" fo
 for j, p in enumerate(pallets):
   if p["d"] >= 0:
     print("(= %d (+" % p["d"], end = "")
-    for i in range(1, (T+1)):
-      print(" %s%d" % (p["name"], i), end = "")
-    print("))")
+  else:
+    print("(= %s (+" % p["name"], end = "")
+  for i in range(1, (T+1)):
+    print(" %s%d" % (p["name"], i), end = "")
+  print("))")
 
 ############################
 ### Non-alcoholic trucks ###
@@ -73,9 +77,7 @@ for i in range(1, (T+1)):
 ##########################
 print("))")
 
-fmt = "(maximize (+" + " B%d"*6 + "))"
-print(fmt % tuple(range(1, T+1)))
-
+print("(maximize B)")
 print("(check-sat)")
 print("(get-model)")
 print("(get-objectives)")

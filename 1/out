@@ -58,9 +58,11 @@ sat
     0)
   (define-fun W1 () Int
     0)
+  (define-fun B () Int
+    18)
   (define-fun C1 () Int
     0)
 )
 (objectives
- ((+ B1 B2 B3 B4 B5 B6) 18)
+ (B 18)
 )
