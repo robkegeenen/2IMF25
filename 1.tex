@@ -1,11 +1,11 @@
 \chapter{}\label{chp:1}
 The problem contains several linear inequalities, and thus can best be solved as an SMT, by Z3 for example. We have a number of trucks, let's say $n$. For each truck $i$, with $1 \leq i \leq n$ we in turn introduce a variable for every pallet type $x \in X$, where $X$ is the set of pallet types. We have $x_i :=$ the amount of pallets delivered by truck $i$ of type $x$. For example, in the current exercise we get the following variables from $X$:
 \begin{itemize}
-    \item $c_i$ : # cheese pallets delivered by truck $i$
-    \item $b_i$ : # beer pallets delivered by truck $i$
-    \item $w_i$ : # wine pallets delivered by truck $i$
-    \item $d_i$ : # soft drink pallets delivered by truck $i$
-    \item $p_i$ : # potato chips pallets delivered by truck $i$
+    \item $c_i$: number of cheese pallets delivered by truck $i$
+    \item $b_i$: number of beer pallets delivered by truck $i$
+    \item $w_i$: number of wine pallets delivered by truck $i$
+    \item $d_i$: number of soft drink pallets delivered by truck $i$
+    \item $p_i$: number of potato chips pallets delivered by truck $i$
 \end{itemize}
 
 Each pallet type has its own weight, and thus for each type $x$ we introduce a constant $x_w$, which denotes the weight of a pallet of type $x$. We also have a maximum load weight $T_c$ for all trucks. In this exercise we have $T_c = 8500$. This translates to the constraint specified in Equation~\ref{maxload}
@@ -50,7 +50,7 @@ The extra requirement introduced in (b) states that each truck can contain at mo
 
 
 
-\begin{table}[]
+\begin{table}[!ht]
   \begin{tabular}{r | r r r r r}
     B = 18\\
     Truck &  C &  B &  W &  D &  P\\\hline
@@ -61,6 +61,6 @@ The extra requirement introduced in (b) states that each truck can contain at mo
         5 &  1 &  0 &  0 &  5 &  2\\
         6 &  3 &  0 &  0 &  4 &  1\\
   \end{tabular}
-  \caption{CAPTION HERE}
+  \caption{A pallet distribution that satisfies the constraints and maximizes the amount of beer pallets delivered in (a).}
   \label{tab:1_table}
 \end{table}
