@@ -1,11 +1,11 @@
 \chapter{}\label{chp:1}
 The problem contains several linear inequalities, and thus can best be solved as an SMT, by Z3 for example. We have a number of trucks, let's say $n$. For each truck $i$, with $1 \leq i \leq n$ we in turn introduce a variable for every pallet type $x \in X$, where $X$ is the set of pallet types. We have $x_i :=$ the amount of pallets delivered by truck $i$ of type $x$. For example, in the current exercise we get the following variables from $X$:
 \begin{itemize}
-    \item $c_i$: number of cheese pallets delivered by truck $i$
-    \item $b_i$: number of beer pallets delivered by truck $i$
-    \item $w_i$: number of wine pallets delivered by truck $i$
-    \item $d_i$: number of soft drink pallets delivered by truck $i$
-    \item $p_i$: number of potato chips pallets delivered by truck $i$
+    \item $c_i$: \# of cheese pallets delivered by truck $i$
+    \item $b_i$: \# of beer pallets delivered by truck $i$
+    \item $w_i$: \# of wine pallets delivered by truck $i$
+    \item $d_i$: \# of soft drink pallets delivered by truck $i$
+    \item $p_i$: \# of potato chips pallets delivered by truck $i$
 \end{itemize}
 
 Each pallet type has its own weight, and thus for each type $x$ we introduce a constant $x_w$, which denotes the weight of a pallet of type $x$. We also have a maximum load weight $T_c$ for all trucks. In this exercise we have $T_c = 8500$. This translates to the constraint specified in Equation~\ref{maxload}
@@ -28,7 +28,7 @@ Next, there are a set amount of pallets to be delivered for each pallet type, ex
     \end{aligned}
 \end{equation}
 
-Let $m$ trucks be allowed to deliver alcohol, for some $0 \leq m \leq n$. Note that which trucks are allowed to deliver alcohol is not important as they all have the same load capacity. Then $n - m$ trucks are not allowed to deliver alcohol, and thus they should deliver zero pallets containing alcohol. Let $x_a \in \{\textit{True}, \textit{False}\}$ denote whether pallet type $x$ contains alcohol, and let $X^{a}$ denote the set of pallet types $x$ for which $x_a = \textit{True}$. We get the constraint specified in Equation~\ref{alcohol}.
+Let $m$ trucks be allowed to deliver alcohol, for some $0 \leq m \leq n$. Note that which trucks are allowed to deliver alcohol is not important as they all have the same load capacity. Then $n - m$ trucks are not allowed to deliver alcohol, and thus they should deliver zero pallets containing alcohol. Let $x_a \in \{\textit{True}, \textit{False}\}$ denote whether pallet type $x$ contains alcohol, and let $X^{a}$ denote the set of pallet types $x$ which contain alcohol and thus $x_a = \textit{True}$. We get the constraint specified in Equation~\ref{alcohol}.
 \begin{equation}
     \label{alcohol}
     \bigwedge^n_{i=m+1} \bigg(\bigwedge_{x \in X^a} \big( x_i = 0 \big)\bigg)
@@ -40,15 +40,8 @@ Under these constraints we want to maximize the number of pallets delivered for 
     \textbf{Maximize: } \sum^n_{i=1} x_i && \text{for each }x \in P
     \end{aligned}
 \end{equation}
-
-The extra requirement introduced in (b) states that each truck can contain at most two pallets of soft drinks. We can generalize this by introducing a variable $x_{\max}$ for every pallet type $x$, such that $x_{\max}$ denotes the maximum amount of pallets of that type allowed per truck. This means that for all trucks $1 \leq i \leq n$ we have $x_i \leq x_{\max}$. In total, we get the constraint in Equation~\ref{extra}. Note that for the exercise in (b) we have $d_{\max} = 2$.
-\begin{equation}
-    \label{extra}
-    \bigwedge^n_{i=1}\bigg( \bigwedge_{x \in X} x_i \leq x_{\max}\bigg)
-\end{equation}
-
-
-
+We write a python script that generates the SMT-LIB v2 file for us. This script can be seen in Appendix~\Cref{}, as well as the output SMT-LIB v2 file in Appendix~\Cref{}.
+The resulting truck loads for (a) can be found in Table~\ref{tab:a_table}.
 
 \begin{table}[!ht]
   \begin{tabular}{r | r r r r r}
@@ -61,6 +54,29 @@ The extra requirement introduced in (b) states that each truck can contain at mo
         5 &  1 &  0 &  0 &  5 &  2\\
         6 &  3 &  0 &  0 &  4 &  1\\
   \end{tabular}
-  \caption{A pallet distribution that satisfies the constraints and maximizes the amount of beer pallets delivered in (a).}
-  \label{tab:1_table}
+  \caption{A pallet distribution that satisfies the constraints and maximizes the amount of beer pallets delivered in exercise (a).}
+  \label{tab:a_table}
 \end{table}
+
+The extra requirement introduced in (b) states that each truck can contain at most two pallets of soft drinks. We can generalize this by introducing a variable $x_{\max}$ for every pallet type $x$, such that $x_{\max}$ denotes the maximum amount of pallets of that type allowed per truck. This means that for all trucks $1 \leq i \leq n$ we have $x_i \leq x_{\max}$. In total, we get the constraint in Equation~\ref{extra}. Note that for the exercise in (b) we have $d_{\max} = 2$. The resulting truck loads can be found in Table~\ref{tab:b_table}.
+\begin{equation}
+    \label{extra}
+    \bigwedge^n_{i=1}\bigg( \bigwedge_{x \in X} x_i \leq x_{\max}\bigg)
+\end{equation}
+
+\begin{table}[!ht]
+  \begin{tabular}{r | r r r r r}
+    B = 12\\
+    Truck &  C &  B &  W &  D &  P\\\hline
+        1 &  0 &  4 &  0 &  2 &  0\\
+        2 &  0 &  4 &  0 &  2 &  0\\
+        3 &  0 &  3 &  4 &  0 &  0\\
+        4 &  0 &  1 &  4 &  2 &  0\\
+        5 &  0 &  0 &  0 &  2 &  3\\
+        6 &  4 &  0 &  0 &  2 &  2\\
+  \end{tabular}
+  \caption{A pallet distribution that satisfies the constraints and maximizes the amount of beer pallets delivered in exercise (b).}
+  \label{tab:b_table}
+\end{table}
+
+
