@@ -1,0 +1,48 @@
+sat
+(model 
+  (define-fun t () Int
+    71)
+  (define-fun s2 () Int
+    0)
+  (define-fun s7 () Int
+    15)
+  (define-fun s9 () Int
+    32)
+  (define-fun s3 () Int
+    12)
+  (define-fun s1 () Int
+    0)
+  (define-fun s6 () Int
+    14)
+  (define-fun s8 () Int
+    30)
+  (define-fun s5 () Int
+    0)
+  (define-fun s4 () Int
+    0)
+  (define-fun s10 () Int
+    51)
+  (define-fun e10 () Int
+    71)
+  (define-fun e9 () Int
+    51)
+  (define-fun e8 () Int
+    48)
+  (define-fun e7 () Int
+    32)
+  (define-fun e6 () Int
+    30)
+  (define-fun e5 () Int
+    15)
+  (define-fun e4 () Int
+    14)
+  (define-fun e3 () Int
+    25)
+  (define-fun e2 () Int
+    12)
+  (define-fun e1 () Int
+    11)
+)
+(objectives
+ (t 71)
+)
