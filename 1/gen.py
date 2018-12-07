@@ -76,6 +76,7 @@ for i in irange:
 ############################
 ### Pallet type max load ###
 ############################
+print("; The following requirements belong to part (b) of the assignment")
 for j, p in enumerate(pallets):
   if p["max"] >= 0:
     for i in irange:
