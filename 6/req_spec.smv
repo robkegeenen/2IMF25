@@ -1,0 +1,397 @@
+MODULE main
+VAR
+s: 0..4180;
+a0: boolean;
+a1: boolean;
+a2: boolean;
+a3: boolean;
+a4: boolean;
+a5: boolean;
+a6: boolean;
+a7: boolean;
+a8: boolean;
+a9: boolean;
+a10: boolean;
+a11: boolean;
+a12: boolean;
+a13: boolean;
+a14: boolean;
+a15: boolean;
+a16: boolean;
+
+INIT
+!a0 &
+!a1 &
+!a2 &
+!a3 &
+!a4 &
+!a5 &
+!a6 &
+a7 &
+!a8 &
+!a9 &
+!a10 &
+!a11 &
+!a12 &
+!a13 &
+!a14 &
+!a15 &
+!a16 &
+s = 0
+
+TRANS
+case
+  s < 4180:
+    next(s) = s + 1 & (
+      (
+        (a0 & a1) &
+          next(a0) = FALSE &
+          next(a1) = FALSE &
+          next(a2) = TRUE &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a1 & a2) &
+          next(a1) = FALSE &
+          next(a2) = FALSE &
+          next(a3) = TRUE &
+          next(a0) = a0 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a2 & a3) &
+          next(a2) = FALSE &
+          next(a3) = FALSE &
+          next(a4) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a3 & a4) &
+          next(a3) = FALSE &
+          next(a4) = FALSE &
+          next(a5) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a4 & a5) &
+          next(a4) = FALSE &
+          next(a5) = FALSE &
+          next(a6) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a5 & a6) &
+          next(a5) = FALSE &
+          next(a6) = FALSE &
+          next(a7) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a6 & a7) &
+          next(a6) = FALSE &
+          next(a7) = FALSE &
+          next(a8) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a7 & a8) &
+          next(a7) = FALSE &
+          next(a8) = FALSE &
+          next(a9) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a8 & a9) &
+          next(a8) = FALSE &
+          next(a9) = FALSE &
+          next(a10) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a9 & a10) &
+          next(a9) = FALSE &
+          next(a10) = FALSE &
+          next(a11) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a12) = a12 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a10 & a11) &
+          next(a10) = FALSE &
+          next(a11) = FALSE &
+          next(a12) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a13) = a13 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a11 & a12) &
+          next(a11) = FALSE &
+          next(a12) = FALSE &
+          next(a13) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a14) = a14 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a12 & a13) &
+          next(a12) = FALSE &
+          next(a13) = FALSE &
+          next(a14) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a15) = a15 &
+          next(a16) = a16
+      ) |
+      (
+        (a13 & a14) &
+          next(a13) = FALSE &
+          next(a14) = FALSE &
+          next(a15) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a16) = a16
+      ) |
+      (
+        (a14 & a15) &
+          next(a14) = FALSE &
+          next(a15) = FALSE &
+          next(a16) = TRUE &
+          next(a0) = a0 &
+          next(a1) = a1 &
+          next(a2) = a2 &
+          next(a3) = a3 &
+          next(a4) = a4 &
+          next(a5) = a5 &
+          next(a6) = a6 &
+          next(a7) = a7 &
+          next(a8) = a8 &
+          next(a9) = a9 &
+          next(a10) = a10 &
+          next(a11) = a11 &
+          next(a12) = a12 &
+          next(a13) = a13
+      ) |
+      (
+        next(a0) = TRUE &
+        next(a1) = a1 &
+        next(a2) = a2 &
+        next(a3) = a3 &
+        next(a4) = a4 &
+        next(a5) = a5 &
+        next(a6) = a6 &
+        next(a7) = a7 &
+        next(a8) = a8 &
+        next(a9) = a9 &
+        next(a10) = a10 &
+        next(a11) = a11 &
+        next(a12) = a12 &
+        next(a13) = a13 &
+        next(a14) = a14 &
+        next(a15) = a15 &
+        next(a16) = a16
+      ) |
+      (
+        next(a0) = a1 &
+        next(a1) = a0 &
+        next(a2) = a2 &
+        next(a3) = a3 &
+        next(a4) = a4 &
+        next(a5) = a5 &
+        next(a6) = a6 &
+        next(a7) = a7 &
+        next(a8) = a8 &
+        next(a9) = a9 &
+        next(a10) = a10 &
+        next(a11) = a11 &
+        next(a12) = a12 &
+        next(a13) = a13 &
+        next(a14) = a14 &
+        next(a15) = a15 &
+        next(a16) = a16
+      )
+    );
+  TRUE:
+    next(s) = s;
+esac
+
+SPEC EF (s > 0 &
+  a7 &
+  a16 &
+  s <= 4180)
+
+SPEC EF (s > 0 &
+  a7 &
+  a16 &
+  s <= 4179)
