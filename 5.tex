@@ -1,1 +1,23 @@
 \chapter{}\label{chp:1}
+We completed this question with Z3. To model this question such that Z3 can solve it, we have to create more variables for every step of time. First, we look at the number of pallets loaded in the truck. For every point in time, we create a variable. Let $tp_{\delta}$ denote the amount of pallets in the truck at step $\delta$, where $0 \leq \delta \leq \infty$. For the given situation (in (a)), we initialize $tp_0$ to 300. The truck also has a maximum load, in this case 300. We then have the following constraints:
+
+\begin{equation}
+    \label{maxload}
+    \bigwedge^{\infty}_{\delta=0} (tp_{\delta} \geq 0 \wedge tp_{\delta} \leq 300)
+\end{equation}
+
+Next, we define variables for the amount of food pallets in each village's stock. We let $sb_{x,\delta}$ denote the amount of pallets in stock at village $x$, at step $\delta$, \textit{before} delivery, where $x \in V$ is a village in the given set of villages $V$ that need food. Similarly, we also have $sa_{x,\delta}$ denote the amount of pallets in stock at village $x$, at step $\delta$, \textit{after} delivery. We want the villages to always be able to process one food pallet each time unit, and thus $sa_{x, \delta}$ should always be greater than 0, while $sb_{x, \delta}$ should always be greater than or equal to 0 as in this case village $x$ can process its last food package just before the truck arrives. Thus we get the following constraints:
+
+\begin{equation}
+    \label{minfood}
+    \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in V} (sa_{x, \delta} > 0 \wedge sb_{x, \delta} \geq 0)\bigg)
+\end{equation}
+
+We also want to take into account the consumption of food pallets when the truck is traveling. Let $d(x,y)$ denote the time it takes for a truck to get from village $x$ to village $y$. We create a variable $td_{\delta}$ that denotes the amount of time the truck is traveling in step $\delta$. Then we should have $sb_{x, \delta+1} = sa_{x, \delta} - td_{\delta}$ for every village $x$ in $V$. Then we get the following constraints:
+
+\begin{equation}
+    \label{consumption}
+    \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in V} (sb_{x, \delta+1} = sa_{x, \delta} - td_{\delta})\bigg)
+\end{equation}
+
+Let $S$ denote the set of supply points.
