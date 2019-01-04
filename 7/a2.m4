@@ -6,5 +6,6 @@ p(x, base) = x.
 p(x, s(y)) = x * p(x, y).
 end_of_list.
 
-formulas(goals).inv(x * y) = inv(x) * inv(y).
+formulas(goals).
+inv(x * y) = inv(x) * inv(y).
 end_of_list.

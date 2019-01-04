@@ -6,5 +6,6 @@ p(x, base) = x.
 p(x, s(y)) = x * p(x, y).
 end_of_list.
 
-formulas(goals).x * y = y * x.
+formulas(goals).
+x * y = y * x.
 end_of_list.

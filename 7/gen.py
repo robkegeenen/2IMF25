@@ -39,7 +39,7 @@ for fname in goals:
     f.write("formulas(assumptions).\n")
     for line in assumptions:
       f.write(line + ".\n")
-    f.write("end_of_list.\n\nformulas(goals).")
+    f.write("end_of_list.\n\nformulas(goals).\n")
     for line in goals[fname]:
       f.write(line + ".\n")
     f.write("end_of_list.\n")
