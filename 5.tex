@@ -1,5 +1,5 @@
 \chapter{}\label{chp:1}
-We completed this question with Z3. To model this question such that Z3 can solve it, we have to create more variables for every step of time. First, we look at the number of pallets loaded in the truck. For every point in time, we create a variable. Let $tp_{\delta}$ denote the amount of pallets in the truck at step $\delta$, where $0 \leq \delta \leq \infty$. For the given situation (in (a)), we initialize $tp_0$ to 300. The truck also has a maximum load, in this case 300. We then have the following constraints:
+We completed this question with Z3. To model this question such that Z3 can solve it, we have to create more variables for every step of time. First we let a variable $tl_{\delta}$ denote the location of the truck at step $\delta$. We initialize $tl_0$ to village s. Then, we look at the number of pallets loaded in the truck. For every point in time, we create a variable. Let $tp_{\delta}$ denote the amount of pallets in the truck at step $\delta$, where $0 \leq \delta \leq \infty$. For the given situation (in (a)), we initialize $tp_0$ to 300. The truck also has a maximum load, in this case 300. We then have the following constraints:
 
 \begin{equation}
     \label{maxload}
@@ -20,4 +20,45 @@ We also want to take into account the consumption of food pallets when the truck
     \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in V} (sb_{x, \delta+1} = sa_{x, \delta} - td_{\delta})\bigg)
 \end{equation}
 
-Let $S$ denote the set of supply points.
+Let $S$ denote the set of villages containing a supply point. Then, when the truck is at a village $x \in S$ at step $\delta$, all villages $y$ in $V$ will have the same amount of food packages after delivery at $\delta$ and before the delivery at $\delta + 1$. More formally: $sa_{y, \delta} = sb_{y, \delta+1}$. The truck will be loaded up, such that $tp_{\delta} = 300$ in the given situation. 
+
+Next we also need to model the movement of the truck. If the truck is at some village $x \in V \cup S$, then the truck can move to any other connected village $y \in V \cup S$, such that $x \not= y$. We then set the trucks travel time to the distance between $x$ and $y$, e.g. $td_{\delta} = d(x,y)$. Let $max(x)$ denote the maximum pallet storage for village $x$, and let $N(x)$ denote the set of villages connected to $x$. We model the previous implications as follows:
+
+\begin{align}
+    \label{citystop}
+    \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in V} (tl = x) & \Rightarrow \\ 
+    sa_{x,\delta+1} \leq max(x) & \wedge \\ 
+    (tp_{\delta+1} + sb_{x, \delta+1} = tp_{\delta} + sa_{x, \delta+1}) & \wedge \\ 
+    \bigwedge_{y\not=x \in V}(sa_{y, \delta+1} = sb_{y, \delta+1}) & \wedge \\
+    \bigvee_{z \in N(x)} (tl_{\delta+1} = z \wedge td_{\delta+1} = d(x,z))
+    \bigg)
+\end{align}
+
+In other words, if the truck is in a village $x$ that requires food (1.4), it can deliver food to $x$ such that the food supply does not exceed the maximum $max(x)$ (1.5), and the truck gets emptied to a certain extent (1.6). Then all other villages in $V$ will not have any food delivered this step (1.7), and the truck must move to another village (1.8).
+The constraints for when a truck is in a village with a supply point is given below:
+
+\begin{align}
+    \label{citystop}
+    \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in S} (tl = x) & \Rightarrow \\
+    \bigwedge_{y \in V}(sa_{y, \delta+1} = sb_{y, \delta+1}) & \wedge \\
+    \bigvee_{z \in N(x)} (tl_{\delta+1} = z \wedge td_{\delta+1} = d(x,z))
+    \bigg)
+\end{align}
+
+This is similar to the previous constraints, but all villages in $V$ do not get resupplied (1.10) and the village with the supply point does not need to be resupplied.
+
+When implemented in Z3, checking satisfiability under all these constraints still requires a maximum amount of steps to be set. When we set this to 200, Z3 returns not satisfiable. Thus we can conclude that there exists no "path" to step 200 such that at each point on that path (e.g. value of $\delta$) all villages still have a food pallet. Then certainly there can not be a path to step 201 where each village always has food to consume. 
+
+For parts (b) and (c) of this question, we had to implement some extra constraints. Concluding that it is indeed possible to sustain the villages requires a finite loop to be found. For this we create the following additional variables. For every step $\delta$ we create a variable $loop_{\delta}$. This variable will indicate whether at the last step $\delta^{+}$, the process can loop to this step $\delta$ such that the status of all villages and the truck is equal in both steps $\delta$ and $\delta^{+}$. More formally, we get:
+
+\begin{align}
+    \bigwedge^{\delta^{+} - 1}_{\delta=0}\bigg(loop_{\delta} & \Longleftrightarrow \\
+    (tl_{\delta} = tl_{\delta^{+}} \wedge tp_{\delta} = tp_{\delta^{+}}) & \wedge \\
+    \bigwedge_{x \in V}\big(sa_{x,\delta} = sa_{x,\delta^{+}}\big)\bigg)
+\end{align}
+
+We then add the constraint that we want to find (at least) one of these variables to be true, and thus we get:
+
+\begin{align}
+    \bigvee^{\delta^{+} - 1}_{\delta=0} loop_{\delta}
+\end{align}
