@@ -44,6 +44,44 @@ case
   s < 4180:
     next(s) = s + 1 & (
       (
+        next(a0) = TRUE &
+        next(a1) = a1 &
+        next(a2) = a2 &
+        next(a3) = a3 &
+        next(a4) = a4 &
+        next(a5) = a5 &
+        next(a6) = a6 &
+        next(a7) = a7 &
+        next(a8) = a8 &
+        next(a9) = a9 &
+        next(a10) = a10 &
+        next(a11) = a11 &
+        next(a12) = a12 &
+        next(a13) = a13 &
+        next(a14) = a14 &
+        next(a15) = a15 &
+        next(a16) = a16
+      ) |
+      (
+        next(a0) = a1 &
+        next(a1) = a0 &
+        next(a2) = a2 &
+        next(a3) = a3 &
+        next(a4) = a4 &
+        next(a5) = a5 &
+        next(a6) = a6 &
+        next(a7) = a7 &
+        next(a8) = a8 &
+        next(a9) = a9 &
+        next(a10) = a10 &
+        next(a11) = a11 &
+        next(a12) = a12 &
+        next(a13) = a13 &
+        next(a14) = a14 &
+        next(a15) = a15 &
+        next(a16) = a16
+      ) |
+      (
         (a0 & a1) &
           next(a0) = FALSE &
           next(a1) = FALSE &
@@ -342,56 +380,18 @@ case
           next(a11) = a11 &
           next(a12) = a12 &
           next(a13) = a13
-      ) |
-      (
-        next(a0) = TRUE &
-        next(a1) = a1 &
-        next(a2) = a2 &
-        next(a3) = a3 &
-        next(a4) = a4 &
-        next(a5) = a5 &
-        next(a6) = a6 &
-        next(a7) = a7 &
-        next(a8) = a8 &
-        next(a9) = a9 &
-        next(a10) = a10 &
-        next(a11) = a11 &
-        next(a12) = a12 &
-        next(a13) = a13 &
-        next(a14) = a14 &
-        next(a15) = a15 &
-        next(a16) = a16
-      ) |
-      (
-        next(a0) = a1 &
-        next(a1) = a0 &
-        next(a2) = a2 &
-        next(a3) = a3 &
-        next(a4) = a4 &
-        next(a5) = a5 &
-        next(a6) = a6 &
-        next(a7) = a7 &
-        next(a8) = a8 &
-        next(a9) = a9 &
-        next(a10) = a10 &
-        next(a11) = a11 &
-        next(a12) = a12 &
-        next(a13) = a13 &
-        next(a14) = a14 &
-        next(a15) = a15 &
-        next(a16) = a16
       )
     );
   TRUE:
     next(s) = s;
 esac
 
-SPEC EF (s > 0 &
-  a7 &
-  a16 &
-  s <= 4180)
-
-SPEC EF (s > 0 &
+SPEC ! EF (s > 0 &
   a7 &
   a16 &
   s <= 4179)
+
+SPEC  EF (s > 0 &
+  a7 &
+  a16 &
+  s <= 4180)
