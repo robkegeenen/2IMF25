@@ -1,0 +1,18 @@
+  (define-fun loopto_8 () Bool
+    false)
+  (define-fun loopto_7 () Bool
+    false)
+  (define-fun loopto_6 () Bool
+    false)
+  (define-fun loopto_5 () Bool
+    false)
+  (define-fun loopto_4 () Bool
+    false)
+  (define-fun loopto_3 () Bool
+    false)
+  (define-fun loopto_2 () Bool
+    true)
+  (define-fun loopto_1 () Bool
+    false)
+  (define-fun loopto_0 () Bool
+    false)

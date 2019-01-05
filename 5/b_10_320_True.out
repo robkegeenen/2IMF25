@@ -1,0 +1,241 @@
+sat
+(model 
+  (define-fun b_stocka_7 () Int
+    38)
+  (define-fun truck_loc_9 () Int
+    1)
+  (define-fun truck_travel_time_4 () Int
+    21)
+  (define-fun a_stocka_4 () Int
+    103)
+  (define-fun a_stocka_2 () Int
+    19)
+  (define-fun c_stocka_9 () Int
+    124)
+  (define-fun truck_travel_time_9 () Int
+    29)
+  (define-fun c_stocka_3 () Int
+    107)
+  (define-fun truck_travel_time_3 () Int
+    17)
+  (define-fun truck_travel_time_5 () Int
+    29)
+  (define-fun truck_loc_6 () Int
+    3)
+  (define-fun truck_loc_7 () Int
+    2)
+  (define-fun c_stocka_6 () Int
+    40)
+  (define-fun truck_loc_1 () Int
+    2)
+  (define-fun truck_loc_4 () Int
+    0)
+  (define-fun c_stocka_2 () Int
+    124)
+  (define-fun truck_travel_time_6 () Int
+    32)
+  (define-fun truck_loc_5 () Int
+    1)
+  (define-fun truck_stock_6 () Int
+    264)
+  (define-fun b_stocka_8 () Int
+    91)
+  (define-fun truck_stock_1 () Int
+    320)
+  (define-fun b_stocka_5 () Int
+    99)
+  (define-fun b_stocka_6 () Int
+    70)
+  (define-fun truck_stock_7 () Int
+    90)
+  (define-fun c_stocka_4 () Int
+    90)
+  (define-fun truck_travel_time_7 () Int
+    37)
+  (define-fun truck_stock_2 () Int
+    259)
+  (define-fun truck_stock_4 () Int
+    57)
+  (define-fun truck_travel_time_1 () Int
+    21)
+  (define-fun b_stocka_4 () Int
+    120)
+  (define-fun truck_stock_3 () Int
+    141)
+  (define-fun truck_stock_9 () Int
+    259)
+  (define-fun truck_loc_2 () Int
+    1)
+  (define-fun c_stocka_5 () Int
+    69)
+  (define-fun truck_stock_8 () Int
+    0)
+  (define-fun a_stocka_3 () Int
+    120)
+  (define-fun truck_loc_3 () Int
+    2)
+  (define-fun c_stocka_8 () Int
+    145)
+  (define-fun b_stocka_2 () Int
+    70)
+  (define-fun c_stocka_7 () Int
+    182)
+  (define-fun truck_travel_time_2 () Int
+    17)
+  (define-fun b_stocka_3 () Int
+    53)
+  (define-fun a_stocka_9 () Int
+    19)
+  (define-fun a_stocka_5 () Int
+    82)
+  (define-fun truck_travel_time_8 () Int
+    21)
+  (define-fun truck_stock_5 () Int
+    320)
+  (define-fun b_stocka_9 () Int
+    70)
+  (define-fun a_stocka_7 () Int
+    77)
+  (define-fun truck_loc_8 () Int
+    0)
+  (define-fun a_stocka_8 () Int
+    40)
+  (define-fun a_stocka_6 () Int
+    109)
+  (define-fun s_stocka_9 () Int
+    1)
+  (define-fun s_stockb_9 () Int
+    1)
+  (define-fun s_stocka_8 () Int
+    1)
+  (define-fun s_stockb_8 () Int
+    1)
+  (define-fun s_stocka_7 () Int
+    1)
+  (define-fun s_stockb_7 () Int
+    1)
+  (define-fun s_stocka_6 () Int
+    1)
+  (define-fun s_stockb_6 () Int
+    1)
+  (define-fun s_stocka_5 () Int
+    1)
+  (define-fun s_stockb_5 () Int
+    1)
+  (define-fun s_stocka_4 () Int
+    1)
+  (define-fun s_stockb_4 () Int
+    1)
+  (define-fun s_stocka_3 () Int
+    1)
+  (define-fun s_stockb_3 () Int
+    1)
+  (define-fun s_stocka_2 () Int
+    1)
+  (define-fun s_stockb_2 () Int
+    1)
+  (define-fun s_stocka_1 () Int
+    1)
+  (define-fun s_stockb_1 () Int
+    1)
+  (define-fun s_stocka_0 () Int
+    1)
+  (define-fun s_stockb_0 () Int
+    1)
+  (define-fun c_stocka_1 () Int
+    145)
+  (define-fun b_stocka_1 () Int
+    30)
+  (define-fun loopto_8 () Bool
+    false)
+  (define-fun loopto_7 () Bool
+    false)
+  (define-fun loopto_6 () Bool
+    false)
+  (define-fun loopto_5 () Bool
+    false)
+  (define-fun loopto_4 () Bool
+    false)
+  (define-fun loopto_3 () Bool
+    false)
+  (define-fun loopto_2 () Bool
+    true)
+  (define-fun loopto_1 () Bool
+    false)
+  (define-fun loopto_0 () Bool
+    false)
+  (define-fun c_stockb_9 () Int
+    124)
+  (define-fun b_stockb_9 () Int
+    70)
+  (define-fun a_stockb_9 () Int
+    19)
+  (define-fun c_stockb_8 () Int
+    145)
+  (define-fun b_stockb_8 () Int
+    1)
+  (define-fun a_stockb_8 () Int
+    40)
+  (define-fun c_stockb_7 () Int
+    8)
+  (define-fun b_stockb_7 () Int
+    38)
+  (define-fun a_stockb_7 () Int
+    77)
+  (define-fun c_stockb_6 () Int
+    40)
+  (define-fun b_stockb_6 () Int
+    70)
+  (define-fun a_stockb_6 () Int
+    53)
+  (define-fun c_stockb_5 () Int
+    69)
+  (define-fun b_stockb_5 () Int
+    99)
+  (define-fun a_stockb_5 () Int
+    82)
+  (define-fun c_stockb_4 () Int
+    90)
+  (define-fun b_stockb_4 () Int
+    36)
+  (define-fun a_stockb_4 () Int
+    103)
+  (define-fun c_stockb_3 () Int
+    107)
+  (define-fun b_stockb_3 () Int
+    53)
+  (define-fun a_stockb_3 () Int
+    2)
+  (define-fun c_stockb_2 () Int
+    124)
+  (define-fun b_stockb_2 () Int
+    9)
+  (define-fun a_stockb_2 () Int
+    19)
+  (define-fun a_stocka_1 () Int
+    40)
+  (define-fun c_stockb_1 () Int
+    145)
+  (define-fun b_stockb_1 () Int
+    30)
+  (define-fun a_stockb_1 () Int
+    40)
+  (define-fun c_stocka_0 () Int
+    145)
+  (define-fun c_stockb_0 () Int
+    145)
+  (define-fun b_stocka_0 () Int
+    30)
+  (define-fun b_stockb_0 () Int
+    30)
+  (define-fun a_stocka_0 () Int
+    40)
+  (define-fun a_stockb_0 () Int
+    40)
+  (define-fun truck_loc_0 () Int
+    0)
+  (define-fun truck_travel_time_0 () Int
+    0)
+  (define-fun truck_stock_0 () Int
+    320)
+)

@@ -1,0 +1,13 @@
+GNU Prolog 1.4.4 (64 bits)
+Compiled Jan 15 2014, 20:38:19 with gcc
+By Daniel Diaz
+Copyright (C) 1999-2013 Daniel Diaz
+compiling /home/robke/Documents/2IMF25/repo/6/req.pl for byte code...
+/home/robke/Documents/2IMF25/repo/6/req.pl compiled, 24 lines read - 1956 bytes written, 9 ms
+| ?- nsteps([0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1], N).
+
+N = 4180 ? 
+
+(7 ms) yes
+
+Prolog interruption (h for help) ? 

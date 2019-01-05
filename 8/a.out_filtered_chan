@@ -1,0 +1,34 @@
+  (define-fun chan_h () Int
+    7)
+  (define-fun chan_a () Int
+    3)
+  (define-fun chan_k () Int
+    0)
+  (define-fun chan_g () Int
+    1)
+  (define-fun chan_e () Int
+    5)
+  (define-fun chan_q () Int
+    6)
+  (define-fun chan_p () Int
+    7)
+  (define-fun chan_d () Int
+    0)
+  (define-fun chan_o () Int
+    4)
+  (define-fun chan_l () Int
+    3)
+  (define-fun chan_c () Int
+    5)
+  (define-fun chan_n () Int
+    5)
+  (define-fun chan_i () Int
+    8)
+  (define-fun chan_f () Int
+    4)
+  (define-fun chan_m () Int
+    2)
+  (define-fun chan_b () Int
+    6)
+  (define-fun chan_j () Int
+    1)

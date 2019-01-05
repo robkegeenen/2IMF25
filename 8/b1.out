@@ -1,0 +1,1125 @@
+sat
+(model 
+  (define-fun chan_j () Int
+    5)
+  (define-fun chan_h () Int
+    3)
+  (define-fun chan_a () Int
+    1)
+  (define-fun chan_k () Int
+    4)
+  (define-fun chan_g () Int
+    5)
+  (define-fun chan_e () Int
+    6)
+  (define-fun chan_q () Int
+    4)
+  (define-fun chan_d () Int
+    2)
+  (define-fun chan_o () Int
+    5)
+  (define-fun chan_p () Int
+    3)
+  (define-fun chan_c () Int
+    4)
+  (define-fun chan_i () Int
+    0)
+  (define-fun chan_l () Int
+    1)
+  (define-fun chan_n () Int
+    6)
+  (define-fun chan_f () Int
+    4)
+  (define-fun chan_m () Int
+    2)
+  (define-fun chan_b () Int
+    0)
+  (define-fun hop_2_p_h () Bool
+    false)
+  (define-fun hop_2_p_f () Bool
+    true)
+  (define-fun hop_2_p_g () Bool
+    true)
+  (define-fun hop_2_p_d () Bool
+    true)
+  (define-fun hop_2_p_e () Bool
+    true)
+  (define-fun hop_2_p_b () Bool
+    true)
+  (define-fun hop_2_p_c () Bool
+    true)
+  (define-fun hop_2_p_a () Bool
+    true)
+  (define-fun hop_2_q_k () Bool
+    false)
+  (define-fun hop_2_q_h () Bool
+    true)
+  (define-fun hop_2_q_i () Bool
+    true)
+  (define-fun hop_2_q_f () Bool
+    false)
+  (define-fun hop_2_q_g () Bool
+    true)
+  (define-fun hop_2_q_d () Bool
+    true)
+  (define-fun hop_2_q_e () Bool
+    true)
+  (define-fun hop_2_q_b () Bool
+    true)
+  (define-fun hop_2_q_c () Bool
+    false)
+  (define-fun hop_2_q_a () Bool
+    true)
+  (define-fun hop_2_n_h () Bool
+    true)
+  (define-fun hop_2_n_g () Bool
+    true)
+  (define-fun hop_2_n_d () Bool
+    true)
+  (define-fun hop_2_n_e () Bool
+    false)
+  (define-fun hop_2_n_b () Bool
+    true)
+  (define-fun hop_2_n_c () Bool
+    true)
+  (define-fun hop_2_n_a () Bool
+    true)
+  (define-fun hop_2_o_j () Bool
+    false)
+  (define-fun hop_2_o_h () Bool
+    true)
+  (define-fun hop_2_o_i () Bool
+    true)
+  (define-fun hop_2_o_f () Bool
+    true)
+  (define-fun hop_2_o_g () Bool
+    false)
+  (define-fun hop_2_o_d () Bool
+    true)
+  (define-fun hop_2_o_e () Bool
+    true)
+  (define-fun hop_2_o_b () Bool
+    true)
+  (define-fun hop_2_o_c () Bool
+    true)
+  (define-fun hop_2_o_a () Bool
+    true)
+  (define-fun hop_2_l_d () Bool
+    true)
+  (define-fun hop_2_l_b () Bool
+    true)
+  (define-fun hop_2_l_c () Bool
+    true)
+  (define-fun hop_2_l_a () Bool
+    false)
+  (define-fun hop_2_m_f () Bool
+    true)
+  (define-fun hop_2_m_d () Bool
+    false)
+  (define-fun hop_2_m_e () Bool
+    true)
+  (define-fun hop_2_m_b () Bool
+    true)
+  (define-fun hop_2_m_c () Bool
+    true)
+  (define-fun hop_2_m_a () Bool
+    true)
+  (define-fun hop_2_j_o () Bool
+    false)
+  (define-fun hop_2_j_g () Bool
+    false)
+  (define-fun hop_2_j_b () Bool
+    true)
+  (define-fun hop_2_j_c () Bool
+    true)
+  (define-fun hop_2_j_a () Bool
+    true)
+  (define-fun hop_2_k_q () Bool
+    false)
+  (define-fun hop_2_k_f () Bool
+    false)
+  (define-fun hop_2_k_d () Bool
+    true)
+  (define-fun hop_2_k_b () Bool
+    true)
+  (define-fun hop_2_k_c () Bool
+    false)
+  (define-fun hop_2_k_a () Bool
+    true)
+  (define-fun hop_2_h_p () Bool
+    false)
+  (define-fun hop_2_h_q () Bool
+    true)
+  (define-fun hop_2_h_n () Bool
+    true)
+  (define-fun hop_2_h_o () Bool
+    true)
+  (define-fun hop_2_h_b () Bool
+    true)
+  (define-fun hop_2_h_c () Bool
+    true)
+  (define-fun hop_2_h_a () Bool
+    true)
+  (define-fun hop_2_i_q () Bool
+    true)
+  (define-fun hop_2_i_o () Bool
+    true)
+  (define-fun hop_2_i_b () Bool
+    false)
+  (define-fun hop_2_i_c () Bool
+    true)
+  (define-fun hop_2_i_a () Bool
+    true)
+  (define-fun hop_2_f_p () Bool
+    true)
+  (define-fun hop_2_f_q () Bool
+    false)
+  (define-fun hop_2_f_o () Bool
+    true)
+  (define-fun hop_2_f_m () Bool
+    true)
+  (define-fun hop_2_f_k () Bool
+    false)
+  (define-fun hop_2_f_g () Bool
+    true)
+  (define-fun hop_2_f_c () Bool
+    false)
+  (define-fun hop_2_g_p () Bool
+    true)
+  (define-fun hop_2_g_q () Bool
+    true)
+  (define-fun hop_2_g_n () Bool
+    true)
+  (define-fun hop_2_g_o () Bool
+    false)
+  (define-fun hop_2_g_j () Bool
+    false)
+  (define-fun hop_2_g_f () Bool
+    true)
+  (define-fun hop_2_g_b () Bool
+    true)
+  (define-fun hop_2_g_c () Bool
+    true)
+  (define-fun hop_2_g_a () Bool
+    true)
+  (define-fun hop_2_d_p () Bool
+    true)
+  (define-fun hop_2_d_q () Bool
+    true)
+  (define-fun hop_2_d_n () Bool
+    true)
+  (define-fun hop_2_d_o () Bool
+    true)
+  (define-fun hop_2_d_l () Bool
+    true)
+  (define-fun hop_2_d_m () Bool
+    false)
+  (define-fun hop_2_d_k () Bool
+    true)
+  (define-fun hop_2_e_p () Bool
+    true)
+  (define-fun hop_2_e_q () Bool
+    true)
+  (define-fun hop_2_e_n () Bool
+    false)
+  (define-fun hop_2_e_o () Bool
+    true)
+  (define-fun hop_2_e_m () Bool
+    true)
+  (define-fun hop_2_e_c () Bool
+    true)
+  (define-fun hop_2_b_p () Bool
+    true)
+  (define-fun hop_2_b_q () Bool
+    true)
+  (define-fun hop_2_b_n () Bool
+    true)
+  (define-fun hop_2_b_o () Bool
+    true)
+  (define-fun hop_2_b_l () Bool
+    true)
+  (define-fun hop_2_b_m () Bool
+    true)
+  (define-fun hop_2_b_j () Bool
+    true)
+  (define-fun hop_2_b_k () Bool
+    true)
+  (define-fun hop_2_b_h () Bool
+    true)
+  (define-fun hop_2_b_i () Bool
+    false)
+  (define-fun hop_2_b_g () Bool
+    true)
+  (define-fun hop_2_c_p () Bool
+    true)
+  (define-fun hop_2_c_q () Bool
+    false)
+  (define-fun hop_2_c_n () Bool
+    true)
+  (define-fun hop_2_c_o () Bool
+    true)
+  (define-fun hop_2_c_l () Bool
+    true)
+  (define-fun hop_2_c_m () Bool
+    true)
+  (define-fun hop_2_c_j () Bool
+    true)
+  (define-fun hop_2_c_k () Bool
+    false)
+  (define-fun hop_2_c_h () Bool
+    true)
+  (define-fun hop_2_c_i () Bool
+    true)
+  (define-fun hop_2_c_f () Bool
+    false)
+  (define-fun hop_2_c_g () Bool
+    true)
+  (define-fun hop_2_c_e () Bool
+    true)
+  (define-fun hop_2_a_p () Bool
+    true)
+  (define-fun hop_2_a_q () Bool
+    true)
+  (define-fun hop_2_a_n () Bool
+    true)
+  (define-fun hop_2_a_o () Bool
+    true)
+  (define-fun hop_2_a_l () Bool
+    false)
+  (define-fun hop_2_a_m () Bool
+    true)
+  (define-fun hop_2_a_j () Bool
+    true)
+  (define-fun hop_2_a_k () Bool
+    true)
+  (define-fun hop_2_a_h () Bool
+    true)
+  (define-fun hop_2_a_i () Bool
+    true)
+  (define-fun hop_2_a_g () Bool
+    true)
+  (define-fun hop_2_p_j () Bool
+    true)
+  (define-fun hop_2_p_i () Bool
+    true)
+  (define-fun hop_2_p_k () Bool
+    true)
+  (define-fun hop_2_q_o () Bool
+    true)
+  (define-fun hop_2_q_m () Bool
+    true)
+  (define-fun hop_2_q_l () Bool
+    true)
+  (define-fun hop_2_q_j () Bool
+    true)
+  (define-fun hop_2_n_o () Bool
+    true)
+  (define-fun hop_2_n_m () Bool
+    true)
+  (define-fun hop_2_n_k () Bool
+    true)
+  (define-fun hop_2_n_i () Bool
+    true)
+  (define-fun hop_2_n_f () Bool
+    true)
+  (define-fun hop_2_o_q () Bool
+    true)
+  (define-fun hop_2_o_n () Bool
+    true)
+  (define-fun hop_2_o_l () Bool
+    true)
+  (define-fun hop_2_o_k () Bool
+    true)
+  (define-fun hop_2_l_q () Bool
+    true)
+  (define-fun hop_2_l_o () Bool
+    true)
+  (define-fun hop_2_l_g () Bool
+    true)
+  (define-fun hop_2_l_h () Bool
+    true)
+  (define-fun hop_2_l_f () Bool
+    true)
+  (define-fun hop_2_l_e () Bool
+    true)
+  (define-fun hop_2_m_q () Bool
+    true)
+  (define-fun hop_2_m_n () Bool
+    true)
+  (define-fun hop_2_m_j () Bool
+    true)
+  (define-fun hop_2_m_i () Bool
+    true)
+  (define-fun hop_2_m_h () Bool
+    true)
+  (define-fun hop_2_m_g () Bool
+    true)
+  (define-fun hop_2_j_q () Bool
+    true)
+  (define-fun hop_2_j_p () Bool
+    true)
+  (define-fun hop_2_j_m () Bool
+    true)
+  (define-fun hop_2_j_k () Bool
+    true)
+  (define-fun hop_2_j_h () Bool
+    true)
+  (define-fun hop_2_j_e () Bool
+    true)
+  (define-fun hop_2_j_d () Bool
+    true)
+  (define-fun hop_2_k_n () Bool
+    true)
+  (define-fun hop_2_k_j () Bool
+    true)
+  (define-fun hop_2_k_p () Bool
+    true)
+  (define-fun hop_2_k_o () Bool
+    true)
+  (define-fun hop_2_k_i () Bool
+    true)
+  (define-fun hop_2_k_e () Bool
+    true)
+  (define-fun hop_2_h_m () Bool
+    true)
+  (define-fun hop_2_h_l () Bool
+    true)
+  (define-fun hop_2_h_j () Bool
+    true)
+  (define-fun hop_2_h_f () Bool
+    true)
+  (define-fun hop_2_h_d () Bool
+    true)
+  (define-fun hop_2_i_p () Bool
+    true)
+  (define-fun hop_2_i_m () Bool
+    true)
+  (define-fun hop_2_i_n () Bool
+    true)
+  (define-fun hop_2_i_k () Bool
+    true)
+  (define-fun hop_2_i_g () Bool
+    true)
+  (define-fun hop_2_i_d () Bool
+    true)
+  (define-fun hop_2_f_n () Bool
+    true)
+  (define-fun hop_2_f_l () Bool
+    true)
+  (define-fun hop_2_f_h () Bool
+    true)
+  (define-fun hop_2_f_e () Bool
+    true)
+  (define-fun hop_2_f_b () Bool
+    true)
+  (define-fun hop_2_f_a () Bool
+    true)
+  (define-fun hop_2_g_l () Bool
+    true)
+  (define-fun hop_2_g_m () Bool
+    true)
+  (define-fun hop_2_g_i () Bool
+    true)
+  (define-fun hop_2_g_d () Bool
+    true)
+  (define-fun hop_2_d_j () Bool
+    true)
+  (define-fun hop_2_d_h () Bool
+    true)
+  (define-fun hop_2_d_i () Bool
+    true)
+  (define-fun hop_2_d_g () Bool
+    true)
+  (define-fun hop_2_d_c () Bool
+    true)
+  (define-fun hop_2_e_l () Bool
+    true)
+  (define-fun hop_2_e_j () Bool
+    true)
+  (define-fun hop_2_e_k () Bool
+    true)
+  (define-fun hop_2_e_f () Bool
+    true)
+  (define-fun hop_2_e_b () Bool
+    true)
+  (define-fun hop_2_e_a () Bool
+    true)
+  (define-fun hop_2_b_f () Bool
+    true)
+  (define-fun hop_2_b_e () Bool
+    true)
+  (define-fun hop_2_c_d () Bool
+    true)
+  (define-fun hop_2_c_a () Bool
+    true)
+  (define-fun hop_2_a_f () Bool
+    true)
+  (define-fun hop_2_a_e () Bool
+    true)
+  (define-fun hop_2_a_c () Bool
+    true)
+  (define-fun hop_2_p_q () Bool
+    true)
+  (define-fun hop_2_p_n () Bool
+    true)
+  (define-fun hop_2_p_o () Bool
+    true)
+  (define-fun hop_2_p_l () Bool
+    true)
+  (define-fun hop_2_p_m () Bool
+    true)
+  (define-fun hop_2_q_p () Bool
+    true)
+  (define-fun hop_2_q_n () Bool
+    true)
+  (define-fun hop_2_n_p () Bool
+    true)
+  (define-fun hop_2_n_q () Bool
+    true)
+  (define-fun hop_2_n_l () Bool
+    true)
+  (define-fun hop_2_n_j () Bool
+    true)
+  (define-fun hop_2_o_p () Bool
+    true)
+  (define-fun hop_2_o_m () Bool
+    true)
+  (define-fun hop_2_l_p () Bool
+    true)
+  (define-fun hop_2_l_n () Bool
+    true)
+  (define-fun hop_2_l_m () Bool
+    true)
+  (define-fun hop_2_l_j () Bool
+    true)
+  (define-fun hop_2_l_k () Bool
+    true)
+  (define-fun hop_2_l_i () Bool
+    true)
+  (define-fun hop_2_m_p () Bool
+    true)
+  (define-fun hop_2_m_o () Bool
+    true)
+  (define-fun hop_2_m_l () Bool
+    true)
+  (define-fun hop_2_m_k () Bool
+    true)
+  (define-fun hop_2_j_n () Bool
+    true)
+  (define-fun hop_2_j_l () Bool
+    true)
+  (define-fun hop_2_j_i () Bool
+    true)
+  (define-fun hop_2_j_f () Bool
+    true)
+  (define-fun hop_2_k_l () Bool
+    true)
+  (define-fun hop_2_k_m () Bool
+    true)
+  (define-fun hop_2_k_h () Bool
+    true)
+  (define-fun hop_2_k_g () Bool
+    true)
+  (define-fun hop_2_h_k () Bool
+    true)
+  (define-fun hop_2_h_i () Bool
+    true)
+  (define-fun hop_2_h_g () Bool
+    true)
+  (define-fun hop_2_h_e () Bool
+    true)
+  (define-fun hop_2_i_l () Bool
+    true)
+  (define-fun hop_2_i_j () Bool
+    true)
+  (define-fun hop_2_i_h () Bool
+    true)
+  (define-fun hop_2_i_f () Bool
+    true)
+  (define-fun hop_2_i_e () Bool
+    true)
+  (define-fun hop_2_f_j () Bool
+    true)
+  (define-fun hop_2_f_i () Bool
+    true)
+  (define-fun hop_2_f_d () Bool
+    true)
+  (define-fun hop_2_g_k () Bool
+    true)
+  (define-fun hop_2_g_h () Bool
+    true)
+  (define-fun hop_2_g_e () Bool
+    true)
+  (define-fun hop_2_d_f () Bool
+    true)
+  (define-fun hop_2_d_e () Bool
+    true)
+  (define-fun hop_2_d_b () Bool
+    true)
+  (define-fun hop_2_d_a () Bool
+    true)
+  (define-fun hop_2_e_h () Bool
+    true)
+  (define-fun hop_2_e_i () Bool
+    true)
+  (define-fun hop_2_e_g () Bool
+    true)
+  (define-fun hop_2_e_d () Bool
+    true)
+  (define-fun hop_2_b_d () Bool
+    true)
+  (define-fun hop_2_b_c () Bool
+    true)
+  (define-fun hop_2_b_a () Bool
+    true)
+  (define-fun hop_2_c_b () Bool
+    true)
+  (define-fun hop_2_a_d () Bool
+    true)
+  (define-fun hop_2_a_b () Bool
+    true)
+  (define-fun hop_1_p_q () Bool
+    true)
+  (define-fun hop_1_p_n () Bool
+    true)
+  (define-fun hop_1_p_o () Bool
+    true)
+  (define-fun hop_1_p_l () Bool
+    true)
+  (define-fun hop_1_p_m () Bool
+    true)
+  (define-fun hop_1_p_j () Bool
+    false)
+  (define-fun hop_1_p_k () Bool
+    false)
+  (define-fun hop_1_p_h () Bool
+    false)
+  (define-fun hop_1_p_i () Bool
+    false)
+  (define-fun hop_1_p_f () Bool
+    false)
+  (define-fun hop_1_p_g () Bool
+    false)
+  (define-fun hop_1_p_d () Bool
+    false)
+  (define-fun hop_1_p_e () Bool
+    false)
+  (define-fun hop_1_p_b () Bool
+    false)
+  (define-fun hop_1_p_c () Bool
+    false)
+  (define-fun hop_1_p_a () Bool
+    false)
+  (define-fun hop_1_q_p () Bool
+    true)
+  (define-fun hop_1_q_n () Bool
+    true)
+  (define-fun hop_1_q_o () Bool
+    false)
+  (define-fun hop_1_q_l () Bool
+    false)
+  (define-fun hop_1_q_m () Bool
+    false)
+  (define-fun hop_1_q_j () Bool
+    false)
+  (define-fun hop_1_q_k () Bool
+    false)
+  (define-fun hop_1_q_h () Bool
+    false)
+  (define-fun hop_1_q_i () Bool
+    false)
+  (define-fun hop_1_q_f () Bool
+    false)
+  (define-fun hop_1_q_g () Bool
+    false)
+  (define-fun hop_1_q_d () Bool
+    false)
+  (define-fun hop_1_q_e () Bool
+    false)
+  (define-fun hop_1_q_b () Bool
+    false)
+  (define-fun hop_1_q_c () Bool
+    false)
+  (define-fun hop_1_q_a () Bool
+    false)
+  (define-fun hop_1_n_p () Bool
+    true)
+  (define-fun hop_1_n_q () Bool
+    true)
+  (define-fun hop_1_n_o () Bool
+    false)
+  (define-fun hop_1_n_l () Bool
+    true)
+  (define-fun hop_1_n_m () Bool
+    false)
+  (define-fun hop_1_n_j () Bool
+    true)
+  (define-fun hop_1_n_k () Bool
+    false)
+  (define-fun hop_1_n_h () Bool
+    false)
+  (define-fun hop_1_n_i () Bool
+    false)
+  (define-fun hop_1_n_f () Bool
+    false)
+  (define-fun hop_1_n_g () Bool
+    false)
+  (define-fun hop_1_n_d () Bool
+    false)
+  (define-fun hop_1_n_e () Bool
+    false)
+  (define-fun hop_1_n_b () Bool
+    false)
+  (define-fun hop_1_n_c () Bool
+    false)
+  (define-fun hop_1_n_a () Bool
+    false)
+  (define-fun hop_1_o_p () Bool
+    true)
+  (define-fun hop_1_o_q () Bool
+    false)
+  (define-fun hop_1_o_n () Bool
+    false)
+  (define-fun hop_1_o_l () Bool
+    false)
+  (define-fun hop_1_o_m () Bool
+    true)
+  (define-fun hop_1_o_j () Bool
+    false)
+  (define-fun hop_1_o_k () Bool
+    false)
+  (define-fun hop_1_o_h () Bool
+    false)
+  (define-fun hop_1_o_i () Bool
+    false)
+  (define-fun hop_1_o_f () Bool
+    false)
+  (define-fun hop_1_o_g () Bool
+    false)
+  (define-fun hop_1_o_d () Bool
+    false)
+  (define-fun hop_1_o_e () Bool
+    false)
+  (define-fun hop_1_o_b () Bool
+    false)
+  (define-fun hop_1_o_c () Bool
+    false)
+  (define-fun hop_1_o_a () Bool
+    false)
+  (define-fun hop_1_l_p () Bool
+    true)
+  (define-fun hop_1_l_q () Bool
+    false)
+  (define-fun hop_1_l_n () Bool
+    true)
+  (define-fun hop_1_l_o () Bool
+    false)
+  (define-fun hop_1_l_m () Bool
+    true)
+  (define-fun hop_1_l_j () Bool
+    true)
+  (define-fun hop_1_l_k () Bool
+    true)
+  (define-fun hop_1_l_h () Bool
+    false)
+  (define-fun hop_1_l_i () Bool
+    true)
+  (define-fun hop_1_l_f () Bool
+    false)
+  (define-fun hop_1_l_g () Bool
+    false)
+  (define-fun hop_1_l_d () Bool
+    false)
+  (define-fun hop_1_l_e () Bool
+    false)
+  (define-fun hop_1_l_b () Bool
+    false)
+  (define-fun hop_1_l_c () Bool
+    false)
+  (define-fun hop_1_l_a () Bool
+    false)
+  (define-fun hop_1_m_p () Bool
+    true)
+  (define-fun hop_1_m_q () Bool
+    false)
+  (define-fun hop_1_m_n () Bool
+    false)
+  (define-fun hop_1_m_o () Bool
+    true)
+  (define-fun hop_1_m_l () Bool
+    true)
+  (define-fun hop_1_m_j () Bool
+    false)
+  (define-fun hop_1_m_k () Bool
+    true)
+  (define-fun hop_1_m_h () Bool
+    false)
+  (define-fun hop_1_m_i () Bool
+    false)
+  (define-fun hop_1_m_f () Bool
+    false)
+  (define-fun hop_1_m_g () Bool
+    false)
+  (define-fun hop_1_m_d () Bool
+    false)
+  (define-fun hop_1_m_e () Bool
+    false)
+  (define-fun hop_1_m_b () Bool
+    false)
+  (define-fun hop_1_m_c () Bool
+    false)
+  (define-fun hop_1_m_a () Bool
+    false)
+  (define-fun hop_1_j_p () Bool
+    false)
+  (define-fun hop_1_j_q () Bool
+    false)
+  (define-fun hop_1_j_n () Bool
+    true)
+  (define-fun hop_1_j_o () Bool
+    false)
+  (define-fun hop_1_j_l () Bool
+    true)
+  (define-fun hop_1_j_m () Bool
+    false)
+  (define-fun hop_1_j_k () Bool
+    false)
+  (define-fun hop_1_j_h () Bool
+    false)
+  (define-fun hop_1_j_i () Bool
+    true)
+  (define-fun hop_1_j_f () Bool
+    true)
+  (define-fun hop_1_j_g () Bool
+    false)
+  (define-fun hop_1_j_d () Bool
+    false)
+  (define-fun hop_1_j_e () Bool
+    false)
+  (define-fun hop_1_j_b () Bool
+    false)
+  (define-fun hop_1_j_c () Bool
+    false)
+  (define-fun hop_1_j_a () Bool
+    false)
+  (define-fun hop_1_k_p () Bool
+    false)
+  (define-fun hop_1_k_q () Bool
+    false)
+  (define-fun hop_1_k_n () Bool
+    false)
+  (define-fun hop_1_k_o () Bool
+    false)
+  (define-fun hop_1_k_l () Bool
+    true)
+  (define-fun hop_1_k_m () Bool
+    true)
+  (define-fun hop_1_k_j () Bool
+    false)
+  (define-fun hop_1_k_h () Bool
+    true)
+  (define-fun hop_1_k_i () Bool
+    false)
+  (define-fun hop_1_k_f () Bool
+    false)
+  (define-fun hop_1_k_g () Bool
+    true)
+  (define-fun hop_1_k_d () Bool
+    false)
+  (define-fun hop_1_k_e () Bool
+    false)
+  (define-fun hop_1_k_b () Bool
+    false)
+  (define-fun hop_1_k_c () Bool
+    false)
+  (define-fun hop_1_k_a () Bool
+    false)
+  (define-fun hop_1_h_p () Bool
+    false)
+  (define-fun hop_1_h_q () Bool
+    false)
+  (define-fun hop_1_h_n () Bool
+    false)
+  (define-fun hop_1_h_o () Bool
+    false)
+  (define-fun hop_1_h_l () Bool
+    false)
+  (define-fun hop_1_h_m () Bool
+    false)
+  (define-fun hop_1_h_j () Bool
+    false)
+  (define-fun hop_1_h_k () Bool
+    true)
+  (define-fun hop_1_h_i () Bool
+    true)
+  (define-fun hop_1_h_f () Bool
+    false)
+  (define-fun hop_1_h_g () Bool
+    true)
+  (define-fun hop_1_h_d () Bool
+    false)
+  (define-fun hop_1_h_e () Bool
+    true)
+  (define-fun hop_1_h_b () Bool
+    false)
+  (define-fun hop_1_h_c () Bool
+    false)
+  (define-fun hop_1_h_a () Bool
+    false)
+  (define-fun hop_1_i_p () Bool
+    false)
+  (define-fun hop_1_i_q () Bool
+    false)
+  (define-fun hop_1_i_n () Bool
+    false)
+  (define-fun hop_1_i_o () Bool
+    false)
+  (define-fun hop_1_i_l () Bool
+    true)
+  (define-fun hop_1_i_m () Bool
+    false)
+  (define-fun hop_1_i_j () Bool
+    true)
+  (define-fun hop_1_i_k () Bool
+    false)
+  (define-fun hop_1_i_h () Bool
+    true)
+  (define-fun hop_1_i_f () Bool
+    true)
+  (define-fun hop_1_i_g () Bool
+    false)
+  (define-fun hop_1_i_d () Bool
+    false)
+  (define-fun hop_1_i_e () Bool
+    true)
+  (define-fun hop_1_i_b () Bool
+    false)
+  (define-fun hop_1_i_c () Bool
+    false)
+  (define-fun hop_1_i_a () Bool
+    false)
+  (define-fun hop_1_f_p () Bool
+    false)
+  (define-fun hop_1_f_q () Bool
+    false)
+  (define-fun hop_1_f_n () Bool
+    false)
+  (define-fun hop_1_f_o () Bool
+    false)
+  (define-fun hop_1_f_l () Bool
+    false)
+  (define-fun hop_1_f_m () Bool
+    false)
+  (define-fun hop_1_f_j () Bool
+    true)
+  (define-fun hop_1_f_k () Bool
+    false)
+  (define-fun hop_1_f_h () Bool
+    false)
+  (define-fun hop_1_f_i () Bool
+    true)
+  (define-fun hop_1_f_g () Bool
+    false)
+  (define-fun hop_1_f_d () Bool
+    true)
+  (define-fun hop_1_f_e () Bool
+    false)
+  (define-fun hop_1_f_b () Bool
+    false)
+  (define-fun hop_1_f_c () Bool
+    false)
+  (define-fun hop_1_f_a () Bool
+    false)
+  (define-fun hop_1_g_p () Bool
+    false)
+  (define-fun hop_1_g_q () Bool
+    false)
+  (define-fun hop_1_g_n () Bool
+    false)
+  (define-fun hop_1_g_o () Bool
+    false)
+  (define-fun hop_1_g_l () Bool
+    false)
+  (define-fun hop_1_g_m () Bool
+    false)
+  (define-fun hop_1_g_j () Bool
+    false)
+  (define-fun hop_1_g_k () Bool
+    true)
+  (define-fun hop_1_g_h () Bool
+    true)
+  (define-fun hop_1_g_i () Bool
+    false)
+  (define-fun hop_1_g_f () Bool
+    false)
+  (define-fun hop_1_g_d () Bool
+    false)
+  (define-fun hop_1_g_e () Bool
+    true)
+  (define-fun hop_1_g_b () Bool
+    false)
+  (define-fun hop_1_g_c () Bool
+    false)
+  (define-fun hop_1_g_a () Bool
+    false)
+  (define-fun hop_1_d_p () Bool
+    false)
+  (define-fun hop_1_d_q () Bool
+    false)
+  (define-fun hop_1_d_n () Bool
+    false)
+  (define-fun hop_1_d_o () Bool
+    false)
+  (define-fun hop_1_d_l () Bool
+    false)
+  (define-fun hop_1_d_m () Bool
+    false)
+  (define-fun hop_1_d_j () Bool
+    false)
+  (define-fun hop_1_d_k () Bool
+    false)
+  (define-fun hop_1_d_h () Bool
+    false)
+  (define-fun hop_1_d_i () Bool
+    false)
+  (define-fun hop_1_d_f () Bool
+    true)
+  (define-fun hop_1_d_g () Bool
+    false)
+  (define-fun hop_1_d_e () Bool
+    true)
+  (define-fun hop_1_d_b () Bool
+    true)
+  (define-fun hop_1_d_c () Bool
+    false)
+  (define-fun hop_1_d_a () Bool
+    true)
+  (define-fun hop_1_e_p () Bool
+    false)
+  (define-fun hop_1_e_q () Bool
+    false)
+  (define-fun hop_1_e_n () Bool
+    false)
+  (define-fun hop_1_e_o () Bool
+    false)
+  (define-fun hop_1_e_l () Bool
+    false)
+  (define-fun hop_1_e_m () Bool
+    false)
+  (define-fun hop_1_e_j () Bool
+    false)
+  (define-fun hop_1_e_k () Bool
+    false)
+  (define-fun hop_1_e_h () Bool
+    true)
+  (define-fun hop_1_e_i () Bool
+    true)
+  (define-fun hop_1_e_f () Bool
+    false)
+  (define-fun hop_1_e_g () Bool
+    true)
+  (define-fun hop_1_e_d () Bool
+    true)
+  (define-fun hop_1_e_b () Bool
+    false)
+  (define-fun hop_1_e_c () Bool
+    false)
+  (define-fun hop_1_e_a () Bool
+    false)
+  (define-fun hop_1_b_p () Bool
+    false)
+  (define-fun hop_1_b_q () Bool
+    false)
+  (define-fun hop_1_b_n () Bool
+    false)
+  (define-fun hop_1_b_o () Bool
+    false)
+  (define-fun hop_1_b_l () Bool
+    false)
+  (define-fun hop_1_b_m () Bool
+    false)
+  (define-fun hop_1_b_j () Bool
+    false)
+  (define-fun hop_1_b_k () Bool
+    false)
+  (define-fun hop_1_b_h () Bool
+    false)
+  (define-fun hop_1_b_i () Bool
+    false)
+  (define-fun hop_1_b_f () Bool
+    false)
+  (define-fun hop_1_b_g () Bool
+    false)
+  (define-fun hop_1_b_d () Bool
+    true)
+  (define-fun hop_1_b_e () Bool
+    false)
+  (define-fun hop_1_b_c () Bool
+    true)
+  (define-fun hop_1_b_a () Bool
+    true)
+  (define-fun hop_1_c_p () Bool
+    false)
+  (define-fun hop_1_c_q () Bool
+    false)
+  (define-fun hop_1_c_n () Bool
+    false)
+  (define-fun hop_1_c_o () Bool
+    false)
+  (define-fun hop_1_c_l () Bool
+    false)
+  (define-fun hop_1_c_m () Bool
+    false)
+  (define-fun hop_1_c_j () Bool
+    false)
+  (define-fun hop_1_c_k () Bool
+    false)
+  (define-fun hop_1_c_h () Bool
+    false)
+  (define-fun hop_1_c_i () Bool
+    false)
+  (define-fun hop_1_c_f () Bool
+    false)
+  (define-fun hop_1_c_g () Bool
+    false)
+  (define-fun hop_1_c_d () Bool
+    false)
+  (define-fun hop_1_c_e () Bool
+    false)
+  (define-fun hop_1_c_b () Bool
+    true)
+  (define-fun hop_1_c_a () Bool
+    false)
+  (define-fun hop_1_a_p () Bool
+    false)
+  (define-fun hop_1_a_q () Bool
+    false)
+  (define-fun hop_1_a_n () Bool
+    false)
+  (define-fun hop_1_a_o () Bool
+    false)
+  (define-fun hop_1_a_l () Bool
+    false)
+  (define-fun hop_1_a_m () Bool
+    false)
+  (define-fun hop_1_a_j () Bool
+    false)
+  (define-fun hop_1_a_k () Bool
+    false)
+  (define-fun hop_1_a_h () Bool
+    false)
+  (define-fun hop_1_a_i () Bool
+    false)
+  (define-fun hop_1_a_f () Bool
+    false)
+  (define-fun hop_1_a_g () Bool
+    false)
+  (define-fun hop_1_a_d () Bool
+    true)
+  (define-fun hop_1_a_e () Bool
+    false)
+  (define-fun hop_1_a_b () Bool
+    true)
+  (define-fun hop_1_a_c () Bool
+    false)
+)

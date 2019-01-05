@@ -1,0 +1,314 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2009-11A, November 2009.
+Process 8744 was started by robke on insanity.insaniac.net,
+Sat Jan  5 15:25:42 2019
+The command was "../../prover9/LADR-2009-11A/bin/prover9 -f a1.p9".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file a1.p9
+
+
+formulas(assumptions).
+x * (y * z) = (x * y) * z.
+x * I = x.
+x * inv(x) = I.
+p(x,base) = x.
+p(x,s(y)) = x * p(x,y).
+end_of_list.
+
+formulas(goals).
+I * x = x.
+inv(inv(x)) = x.
+inv(x) * x = I.
+inv(x * y) = inv(y) * inv(x).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 I * x = x # label(non_clause) # label(goal).  [goal].
+2 inv(inv(x)) = x # label(non_clause) # label(goal).  [goal].
+3 inv(x) * x = I # label(non_clause) # label(goal).  [goal].
+4 inv(x * y) = inv(y) * inv(x) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+x * (y * z) = (x * y) * z.  [assumption].
+x * I = x.  [assumption].
+x * inv(x) = I.  [assumption].
+p(x,base) = x.  [assumption].
+p(x,s(y)) = x * p(x,y).  [assumption].
+I * c1 != c1.  [deny(1)].
+inv(inv(c2)) != c2.  [deny(2)].
+inv(c3) * c3 != I.  [deny(3)].
+inv(c4 * c5) != inv(c5) * inv(c4).  [deny(4)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:
+  % assign(max_proofs, 4).  % (Horn set with more than one neg. clause)
+
+WARNING, because some of the denials share constants,
+some of the denials or their descendents may be subsumed,
+preventing the target number of proofs from being found.
+The shared constants are:  I.
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ I, base, c1, c2, c3, c4, c5, *, p, inv, s ]).
+After inverse_order: Function symbol precedence:  function_order([ I, base, c1, c2, c3, c4, c5, *, inv, p, s ]).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+
+Auto_process settings:  (no changes).
+
+           5 x * (y * z) = (x * y) * z.  [assumption].
+kept:      6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+kept:      7 x * I = x.  [assumption].
+kept:      8 x * inv(x) = I.  [assumption].
+kept:      9 p(x,base) = x.  [assumption].
+kept:      10 p(x,s(y)) = x * p(x,y).  [assumption].
+kept:      11 I * c1 != c1.  [deny(1)].
+kept:      12 inv(inv(c2)) != c2.  [deny(2)].
+kept:      13 inv(c3) * c3 != I.  [deny(3)].
+kept:      14 inv(c4 * c5) != inv(c5) * inv(c4).  [deny(4)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+7 x * I = x.  [assumption].
+8 x * inv(x) = I.  [assumption].
+9 p(x,base) = x.  [assumption].
+10 p(x,s(y)) = x * p(x,y).  [assumption].
+11 I * c1 != c1.  [deny(1)].
+12 inv(inv(c2)) != c2.  [deny(2)].
+13 inv(c3) * c3 != I.  [deny(3)].
+14 inv(c4 * c5) != inv(c5) * inv(c4).  [deny(4)].
+end_of_list.
+
+formulas(demodulators).
+6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+7 x * I = x.  [assumption].
+8 x * inv(x) = I.  [assumption].
+9 p(x,base) = x.  [assumption].
+10 p(x,s(y)) = x * p(x,y).  [assumption].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=11): 6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+
+given #2 (I,wt=5): 7 x * I = x.  [assumption].
+
+given #3 (I,wt=6): 8 x * inv(x) = I.  [assumption].
+
+given #4 (I,wt=5): 9 p(x,base) = x.  [assumption].
+
+given #5 (I,wt=10): 10 p(x,s(y)) = x * p(x,y).  [assumption].
+
+given #6 (I,wt=5): 11 I * c1 != c1.  [deny(1)].
+
+given #7 (I,wt=5): 12 inv(inv(c2)) != c2.  [deny(2)].
+
+given #8 (I,wt=6): 13 inv(c3) * c3 != I.  [deny(3)].
+
+given #9 (I,wt=10): 14 inv(c4 * c5) != inv(c5) * inv(c4).  [deny(4)].
+
+given #10 (A,wt=9): 15 x * (I * y) = x * y.  [para(7(a,1),6(a,1,1)),flip(a)].
+
+given #11 (T,wt=6): 18 x * inv(I) = x.  [para(8(a,1),15(a,1,2)),rewrite([7(2)]),flip(a)].
+
+given #12 (T,wt=10): 16 x * (inv(x) * y) = I * y.  [para(8(a,1),6(a,1,1)),flip(a)].
+
+given #13 (T,wt=7): 21 I * inv(inv(x)) = x.  [para(8(a,1),16(a,1,2)),rewrite([7(2)]),flip(a)].
+
+============================== PROOF =================================
+
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 12.
+% Level of proof is 6.
+% Maximum clause weight is 11.000.
+% Given clauses 13.
+
+1 I * x = x # label(non_clause) # label(goal).  [goal].
+5 x * (y * z) = (x * y) * z.  [assumption].
+6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+7 x * I = x.  [assumption].
+8 x * inv(x) = I.  [assumption].
+11 I * c1 != c1.  [deny(1)].
+15 x * (I * y) = x * y.  [para(7(a,1),6(a,1,1)),flip(a)].
+16 x * (inv(x) * y) = I * y.  [para(8(a,1),6(a,1,1)),flip(a)].
+21 I * inv(inv(x)) = x.  [para(8(a,1),16(a,1,2)),rewrite([7(2)]),flip(a)].
+23 x * inv(inv(y)) = x * y.  [para(21(a,1),6(a,2,2)),rewrite([7(2)])].
+24 I * x = x.  [para(21(a,1),15(a,2)),rewrite([23(5),15(4)])].
+25 $F.  [resolve(24,a,11,a)].
+
+============================== end of proof ==========================
+% Redundant proof: 29 $F.  [back_rewrite(11),rewrite([24(3)]),xx(a)].
+
+% Disable descendants (x means already disabled):
+ 11x
+
+given #14 (T,wt=5): 24 I * x = x.  [para(21(a,1),15(a,2)),rewrite([23(5),15(4)])].
+
+given #15 (A,wt=10): 17 x * (y * inv(x * y)) = I.  [para(8(a,1),6(a,1)),flip(a)].
+
+given #16 (T,wt=4): 30 inv(I) = I.  [para(24(a,1),8(a,1))].
+
+given #17 (T,wt=8): 28 x * (inv(x) * y) = y.  [back_rewrite(16),rewrite([24(5)])].
+
+============================== PROOF =================================
+
+% Proof 2 at 0.01 (+ 0.00) seconds.
+% Length of proof is 14.
+% Level of proof is 8.
+% Maximum clause weight is 11.000.
+% Given clauses 17.
+
+2 inv(inv(x)) = x # label(non_clause) # label(goal).  [goal].
+5 x * (y * z) = (x * y) * z.  [assumption].
+6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+7 x * I = x.  [assumption].
+8 x * inv(x) = I.  [assumption].
+12 inv(inv(c2)) != c2.  [deny(2)].
+15 x * (I * y) = x * y.  [para(7(a,1),6(a,1,1)),flip(a)].
+16 x * (inv(x) * y) = I * y.  [para(8(a,1),6(a,1,1)),flip(a)].
+21 I * inv(inv(x)) = x.  [para(8(a,1),16(a,1,2)),rewrite([7(2)]),flip(a)].
+23 x * inv(inv(y)) = x * y.  [para(21(a,1),6(a,2,2)),rewrite([7(2)])].
+24 I * x = x.  [para(21(a,1),15(a,2)),rewrite([23(5),15(4)])].
+28 x * (inv(x) * y) = y.  [back_rewrite(16),rewrite([24(5)])].
+32 inv(inv(x)) = x.  [para(8(a,1),28(a,1,2)),rewrite([7(2)]),flip(a)].
+33 $F.  [resolve(32,a,12,a)].
+
+============================== end of proof ==========================
+% Redundant proof: 35 $F.  [back_rewrite(12),rewrite([32(3)]),xx(a)].
+
+% Disable descendants (x means already disabled):
+ 12x
+
+given #18 (T,wt=5): 32 inv(inv(x)) = x.  [para(8(a,1),28(a,1,2)),rewrite([7(2)]),flip(a)].
+
+============================== PROOF =================================
+
+% Proof 3 at 0.01 (+ 0.00) seconds.
+% Length of proof is 15.
+% Level of proof is 9.
+% Maximum clause weight is 11.000.
+% Given clauses 18.
+
+3 inv(x) * x = I # label(non_clause) # label(goal).  [goal].
+5 x * (y * z) = (x * y) * z.  [assumption].
+6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+7 x * I = x.  [assumption].
+8 x * inv(x) = I.  [assumption].
+13 inv(c3) * c3 != I.  [deny(3)].
+15 x * (I * y) = x * y.  [para(7(a,1),6(a,1,1)),flip(a)].
+16 x * (inv(x) * y) = I * y.  [para(8(a,1),6(a,1,1)),flip(a)].
+21 I * inv(inv(x)) = x.  [para(8(a,1),16(a,1,2)),rewrite([7(2)]),flip(a)].
+23 x * inv(inv(y)) = x * y.  [para(21(a,1),6(a,2,2)),rewrite([7(2)])].
+24 I * x = x.  [para(21(a,1),15(a,2)),rewrite([23(5),15(4)])].
+28 x * (inv(x) * y) = y.  [back_rewrite(16),rewrite([24(5)])].
+32 inv(inv(x)) = x.  [para(8(a,1),28(a,1,2)),rewrite([7(2)]),flip(a)].
+36 inv(x) * x = I.  [para(32(a,1),8(a,1,2))].
+37 $F.  [resolve(36,a,13,a)].
+
+============================== end of proof ==========================
+% Redundant proof: 39 $F.  [back_rewrite(13),rewrite([36(4)]),xx(a)].
+
+% Disable descendants (x means already disabled):
+ 13x
+
+given #19 (T,wt=6): 36 inv(x) * x = I.  [para(32(a,1),8(a,1,2))].
+
+given #20 (A,wt=12): 27 x * (y * (inv(x * y) * z)) = z.  [back_rewrite(20),rewrite([24(7)])].
+
+given #21 (T,wt=8): 38 inv(x) * (x * y) = y.  [para(32(a,1),28(a,1,2,1))].
+
+given #22 (T,wt=9): 44 x * inv(y * x) = inv(y).  [para(17(a,1),38(a,1,2)),rewrite([7(3)]),flip(a)].
+
+============================== PROOF =================================
+
+% Proof 4 at 0.01 (+ 0.00) seconds.
+% Length of proof is 18.
+% Level of proof is 11.
+% Maximum clause weight is 11.000.
+% Given clauses 22.
+
+4 inv(x * y) = inv(y) * inv(x) # label(non_clause) # label(goal).  [goal].
+5 x * (y * z) = (x * y) * z.  [assumption].
+6 (x * y) * z = x * (y * z).  [copy(5),flip(a)].
+7 x * I = x.  [assumption].
+8 x * inv(x) = I.  [assumption].
+14 inv(c4 * c5) != inv(c5) * inv(c4).  [deny(4)].
+15 x * (I * y) = x * y.  [para(7(a,1),6(a,1,1)),flip(a)].
+16 x * (inv(x) * y) = I * y.  [para(8(a,1),6(a,1,1)),flip(a)].
+17 x * (y * inv(x * y)) = I.  [para(8(a,1),6(a,1)),flip(a)].
+21 I * inv(inv(x)) = x.  [para(8(a,1),16(a,1,2)),rewrite([7(2)]),flip(a)].
+23 x * inv(inv(y)) = x * y.  [para(21(a,1),6(a,2,2)),rewrite([7(2)])].
+24 I * x = x.  [para(21(a,1),15(a,2)),rewrite([23(5),15(4)])].
+28 x * (inv(x) * y) = y.  [back_rewrite(16),rewrite([24(5)])].
+32 inv(inv(x)) = x.  [para(8(a,1),28(a,1,2)),rewrite([7(2)]),flip(a)].
+38 inv(x) * (x * y) = y.  [para(32(a,1),28(a,1,2,1))].
+44 x * inv(y * x) = inv(y).  [para(17(a,1),38(a,1,2)),rewrite([7(3)]),flip(a)].
+49 inv(x * y) = inv(y) * inv(x).  [para(44(a,1),38(a,1,2)),flip(a)].
+50 $F.  [resolve(49,a,14,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=22. Generated=212. Kept=38. proofs=4.
+Usable=13. Sos=4. Demods=19. Limbo=3, Disabled=26. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=171. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=33 (0 lex), Back_demodulated=17. Back_unit_deleted=0.
+Demod_attempts=1527. Demod_rewrites=314.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=0.09.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+Exiting with 4 proofs.
+
+Process 8744 exit (max_proofs) Sat Jan  5 15:25:42 2019

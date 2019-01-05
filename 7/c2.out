@@ -1,0 +1,162 @@
+============================== Mace4 =================================
+Mace4 (64) version 2009-11A, November 2009.
+Process 8975 was started by robke on insanity.insaniac.net,
+Sat Jan  5 15:26:40 2019
+The command was "../../prover9/LADR-2009-11A/bin/mace4 -f c2.m4".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file c2.m4
+
+
+formulas(assumptions).
+x * (y * z) = (x * y) * z.
+x * I = x.
+x * inv(x) = I.
+p(x,base) = x.
+p(x,s(y)) = x * p(x,y).
+end_of_list.
+
+formulas(goals).
+p(z,s(base)) = I -> x * y = y * x.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 p(z,s(base)) = I -> x * y = y * x # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+x * (y * z) = (x * y) * z.
+x * I = x.
+x * inv(x) = I.
+p(x,base) = x.
+p(x,s(y)) = x * p(x,y).
+p(c1,s(base)) = I.
+c3 * c2 != c2 * c3.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 2 =========================
+
+============================== STATISTICS ============================
+
+For domain size 2.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=20, kept=20.
+Selections=16, assignments=31, propagations=18, current_models=0.
+Rewrite_terms=175, rewrite_bools=44, indexes=18.
+Rules_from_neg_clauses=6, cross_offs=6.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 3 =========================
+
+============================== STATISTICS ============================
+
+For domain size 3.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=47, kept=47.
+Selections=23, assignments=63, propagations=107, current_models=0.
+Rewrite_terms=862, rewrite_bools=215, indexes=139.
+Rules_from_neg_clauses=34, cross_offs=81.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 4 =========================
+
+============================== STATISTICS ============================
+
+For domain size 4.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=94, kept=94.
+Selections=486, assignments=1909, propagations=973, current_models=0.
+Rewrite_terms=14659, rewrite_bools=3693, indexes=1208.
+Rules_from_neg_clauses=232, cross_offs=921.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 5 =========================
+
+============================== STATISTICS ============================
+
+For domain size 5.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.02 seconds).
+Ground clauses: seen=167, kept=167.
+Selections=369, assignments=1713, propagations=2418, current_models=0.
+Rewrite_terms=24079, rewrite_bools=4894, indexes=4917.
+Rules_from_neg_clauses=479, cross_offs=2775.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 6 =========================
+
+============================== MODEL =================================
+
+interpretation( 6, [number=1, seconds=0], [
+
+        function(I, [ 0 ]),
+
+        function(base, [ 0 ]),
+
+        function(c1, [ 0 ]),
+
+        function(c2, [ 1 ]),
+
+        function(c3, [ 2 ]),
+
+        function(inv(_), [ 0, 1, 2, 4, 3, 5 ]),
+
+        function(s(_), [ 1, 2, 3, 4, 5, 0 ]),
+
+        function(*(_,_), [
+			   0, 1, 2, 3, 4, 5,
+			   1, 0, 3, 2, 5, 4,
+			   2, 4, 0, 5, 1, 3,
+			   3, 5, 1, 4, 0, 2,
+			   4, 2, 5, 0, 3, 1,
+			   5, 3, 4, 1, 2, 0 ]),
+
+        function(p(_,_), [
+			   0, 0, 0, 0, 0, 0,
+			   1, 0, 1, 0, 1, 0,
+			   2, 0, 2, 0, 2, 0,
+			   3, 4, 0, 3, 4, 0,
+			   4, 3, 0, 4, 3, 0,
+			   5, 0, 5, 0, 5, 0 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 6.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.02 seconds).
+Ground clauses: seen=272, kept=272.
+Selections=39, assignments=159, propagations=431, current_models=1.
+Rewrite_terms=4969, rewrite_bools=910, indexes=1096.
+Rules_from_neg_clauses=68, cross_offs=571.
+
+============================== end of statistics =====================
+
+User_CPU=0.02, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 8975 exit (max_models) Sat Jan  5 15:26:40 2019
+The process finished Sat Jan  5 15:26:40 2019
