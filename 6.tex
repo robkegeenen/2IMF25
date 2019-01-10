@@ -1,1 +1,62 @@
 \chapter{}\label{chp:2}
+
+This question was first approximated with Prolog to get some estimate on the number of steps required to reach the objective state. Prolog does not try to minimize the number of steps, so we took that output and then used NuSMV to very that number of steps.
+
+The three given rules are easily implemented in Prolog. Rule 1 can be formulated as:
+
+\begin{lstlisting}
+%Rule 1
+step([0|T], [1|T]).
+\end{lstlisting}
+
+Rule 2 can be formulated as:
+
+\begin{lstlisting}
+%Rule 2
+step([A,B|T], [B,A|T]) :-
+  A \= B.
+\end{lstlisting}
+
+Finally, rule 3 can be formulated as:
+
+\begin{lstlisting}
+%Rule 3
+step(F, T) :-
+  rule3(F, T).
+rule3([1,1,0|T], [0,0,1|T]).
+rule3([H|Tf], [H|Tt]) :-
+  rule3(Tf, Tt).
+\end{lstlisting}
+
+We then still have to make sure that Prolog can chain these rules together, as well as keep track of the number of steps made. We get the following piece of code:
+
+\begin{lstlisting}
+%Step chain
+nsteps(X, X, 0).
+nsteps(X, Z, N) :-
+  step(Y, Z),
+  nsteps(X, Y, M),
+  N is M + 1.
+\end{lstlisting}
+
+The Prolog query will contain the starting state and goal state:
+
+\begin{lstlisting}
+%Query:
+%gprolog --consult-file req.pl --query-goal "nsteps(
+%[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1], N)"
+\end{lstlisting}
+
+The full file can be found in \Cref{app:2_prol_in}. The output (found in \Cref{app:2_prol_out}) shows us that it is possible in 4180 steps. We will now use NuSMV to verify that this is the minimal number of steps needed. 
+
+We create a variable for each entry in the array $a$, such that we get 17 variables. We initialize $a[7]$ to True, and the rest to False. Next, we create a variable that keeps track of the amount of steps made, $s$. Then, as long as $s < 4180$, we allow one of the three rules to be applied to all the variables of $a$. We then check if it eventually holds that:
+\begin{equation}
+    \label{eventually1}
+    s > 0 \wedge a[7] \wedge a[16] \wedge s \leq 4180
+\end{equation}
+Together with Equation~\ref{eventually1} also the following should \textbf{not} hold:
+\begin{equation}
+    \label{eventually2}
+    s > 0 \wedge a[7] \wedge a[16] \wedge s \leq 4179
+\end{equation}
+Then, if we specify both these constraints in NuSMV, the output will tell us whether it can be done in no less than 4180 steps. The input file can be found in \Cref{app:2_smv_in}, the output file can be found in \Cref{app:2_smv_out}. The output shows us that 4180 is indeed the minimal amount of steps required to get to the goal state.

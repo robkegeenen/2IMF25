@@ -1,1 +1,16 @@
 \chapter{}\label{chp:3}
+We implement the first part (a) of this question in Prover9 and Mace4. The input file for Mace4 can be seen in \Cref{app:3_a2_in}. In this file we only test $inv(x*y) = inv(x) * inv(y)$, as this is the only property that does not hold for all groups (we will see the others in Prover9). The output file from Mace4 (shown in \Cref{app:3_a2_out}) shows us that the smallest group for which this property does not hold is of size 6. 
+
+The input file for Prover9 can be seen in \Cref{app:3_a1_in}. In this file we test for the first three properties, alongside with the property $inv(x*y) = inv(y) * inv(x)$, which is a variation on the property that we have seen does not hold for all groups. The output (found in \Cref{app:3_a1_out} shows us that both the first three properties and the additional property hold in all groups. 
+
+Part (b) was done using only Mace4 to find the smallest group size for which the property $x * y = y * x$ does not hold. The input file for this can be found in \Cref{app:3_b_in}, and the output file can be found in \Cref{app:3_b_out}. The output shows us that the smallest group that is not Abelian is of size 6.
+
+Part (c) was also done using only Mace4. We once more refer to the input and output files of this question, as these show the rather simple answer to all three values of $n$. In all three cases ($n \in \{2,3,4\}$) we have that the smallest group for which the Abelian property $x*y = y*x$ does not hold, given that $x^n = I$ holds, is of size 6. The input and output files can be found in the list below:
+\begin{itemize}
+    \item Input file for $n=2$: \Cref{app:3_c2_in}
+    \item Output file for $n=2$: \Cref{app:3_c2_out}
+    \item Input file for $n=3$: \Cref{app:3_c3_in}
+    \item Output file for $n=3$: \Cref{app:3_c3_out}
+    \item Input file for $n=4$: \Cref{app:3_c4_in}
+    \item Output file for $n=4$: \Cref{app:3_c4_out}
+\end{itemize}

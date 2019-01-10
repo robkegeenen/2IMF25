@@ -2,21 +2,21 @@
 We completed this question with Z3. To model this question such that Z3 can solve it, we have to create more variables for every step of time. First we let a variable $tl_{\delta}$ denote the location of the truck at step $\delta$. We initialize $tl_0$ to village s. Then, we look at the number of pallets loaded in the truck. For every point in time, we create a variable. Let $tp_{\delta}$ denote the amount of pallets in the truck at step $\delta$, where $0 \leq \delta \leq \infty$. For the given situation (in (a)), we initialize $tp_0$ to 300. The truck also has a maximum load, in this case 300. We then have the following constraints:
 
 \begin{equation}
-    \label{maxload}
+    \label{eqn:5_maxload}
     \bigwedge^{\infty}_{\delta=0} (tp_{\delta} \geq 0 \wedge tp_{\delta} \leq 300)
 \end{equation}
 
 Next, we define variables for the amount of food pallets in each village's stock. We let $sb_{x,\delta}$ denote the amount of pallets in stock at village $x$, at step $\delta$, \textit{before} delivery, where $x \in V$ is a village in the given set of villages $V$ that need food. Similarly, we also have $sa_{x,\delta}$ denote the amount of pallets in stock at village $x$, at step $\delta$, \textit{after} delivery. We want the villages to always be able to process one food pallet each time unit, and thus $sa_{x, \delta}$ should always be greater than 0, while $sb_{x, \delta}$ should always be greater than or equal to 0 as in this case village $x$ can process its last food package just before the truck arrives. Thus we get the following constraints:
 
 \begin{equation}
-    \label{minfood}
+    \label{eqn:5_minfood}
     \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in V} (sa_{x, \delta} > 0 \wedge sb_{x, \delta} \geq 0)\bigg)
 \end{equation}
 
 We also want to take into account the consumption of food pallets when the truck is traveling. Let $d(x,y)$ denote the time it takes for a truck to get from village $x$ to village $y$. We create a variable $td_{\delta}$ that denotes the amount of time the truck is traveling in step $\delta$. Then we should have $sb_{x, \delta+1} = sa_{x, \delta} - td_{\delta}$ for every village $x$ in $V$. Then we get the following constraints:
 
 \begin{equation}
-    \label{consumption}
+    \label{eqn:5_consumption}
     \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in V} (sb_{x, \delta+1} = sa_{x, \delta} - td_{\delta})\bigg)
 \end{equation}
 
@@ -25,7 +25,7 @@ Let $S$ denote the set of villages containing a supply point. Then, when the tru
 Next we also need to model the movement of the truck. If the truck is at some village $x \in V \cup S$, then the truck can move to any other connected village $y \in V \cup S$, such that $x \not= y$. We then set the trucks travel time to the distance between $x$ and $y$, e.g. $td_{\delta} = d(x,y)$. Let $max(x)$ denote the maximum pallet storage for village $x$, and let $N(x)$ denote the set of villages connected to $x$. We model the previous implications as follows:
 
 \begin{align}
-    \label{citystop}
+    \label{eqn:5_citystop_consume}
     \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in V} (tl = x) & \Rightarrow \\ 
     sa_{x,\delta+1} \leq max(x) & \wedge \\ 
     (tp_{\delta+1} + sb_{x, \delta+1} = tp_{\delta} + sa_{x, \delta+1}) & \wedge \\ 
@@ -38,7 +38,7 @@ In other words, if the truck is in a village $x$ that requires food (1.4), it ca
 The constraints for when a truck is in a village with a supply point is given below:
 
 \begin{align}
-    \label{citystop}
+    \label{eqn:5_citystop_supply}
     \bigwedge^{\infty}_{\delta=0}\bigg(\bigwedge_{x \in S} (tl = x) & \Rightarrow \\
     \bigwedge_{y \in V}(sa_{y, \delta+1} = sb_{y, \delta+1}) & \wedge \\
     \bigvee_{z \in N(x)} (tl_{\delta+1} = z \wedge td_{\delta+1} = d(x,z))
@@ -47,7 +47,7 @@ The constraints for when a truck is in a village with a supply point is given be
 
 This is similar to the previous constraints, but all villages in $V$ do not get resupplied (1.10) and the village with the supply point does not need to be resupplied.
 
-When implemented in Z3, checking satisfiability under all these constraints still requires a maximum amount of steps to be set. When we set this to 200, Z3 returns not satisfiable. Thus we can conclude that there exists no "path" to step 200 such that at each point on that path (e.g. value of $\delta$) all villages still have a food pallet. Then certainly there can not be a path to step 201 where each village always has food to consume. 
+When implemented in Z3, checking satisfiability under all these constraints still requires a maximum amount of steps to be set. When we set this to 200, Z3 returns not satisfiable. See \Cref{app:1_a_out} for the output of Z3. We omitted the input smt file in this document as that file contains over 300 pages of smt code. From the output we can conclude that there exists no "path" to step 200 such that at each point on that path (e.g. value of $\delta$) all villages still have a food pallet. Then certainly there can not be a path to step 201 where each village always has food to consume. 
 
 For parts (b) and (c) of this question, we had to implement some extra constraints. Concluding that it is indeed possible to sustain the villages requires a finite loop to be found. For this we create the following additional variables. For every step $\delta$ we create a variable $loop_{\delta}$. This variable will indicate whether at the last step $\delta^{+}$, the process can loop to this step $\delta$ such that the status of all villages and the truck is equal in both steps $\delta$ and $\delta^{+}$. More formally, we get:
 
@@ -62,3 +62,12 @@ We then add the constraint that we want to find (at least) one of these variable
 \begin{align}
     \bigvee^{\delta^{+} - 1}_{\delta=0} loop_{\delta}
 \end{align}
+
+We implemented the constraints for a total number of 10 steps (see \Cref{app:1_b_in}) in Z3, and from this we retrieved the output shown in \Cref{app:1_b_out}, which tells us that the model is satisfiable. This means that the truck traveled along 10 villages and then looped through some point in time. To clearly see where the loop occurs and what path the truck takes, we filtered the output on loops and truck location in \Cref{app:1_b_loop} and \Cref{app:1_b_loc} respectively. From these files we can tell that the truck first takes the path in (1.16) below, from $s$ to $a$, and then continually loops the path in (1.17).
+
+\begin{align}
+    s \rightarrow b \rightarrow a \\
+    a \rightarrow b \rightarrow s \rightarrow a \rightarrow c \rightarrow b \rightarrow s \rightarrow a
+\end{align}
+
+For part (c) we again omitted the input smt file, and we show only the output file \Cref{app:1_c_out} which tells us that with a maximum load of 318 it is not possible to supply the villages continually.
