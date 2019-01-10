@@ -1,8 +1,10 @@
 \onecolumn
 \newcommand{\refq}[1]{\texorpdfstring{\Cref{chp:#1}}{q#1}}
 \begin{appendices}
-\renewcommand{\thechapter}{\arabic{chapter}}
 \crefalias{chapter}{applbl}
+
+\appendix
+\renewcommand\thechapter{\arabic{chapter}} 
 
 \chapter{Python script for generating the constraints file for \refq{1}}
 \label{app:1_gen.py}
